@@ -1,0 +1,14 @@
+
+#A variable names in memory that stores avalue that can change during the execution of a program. on the other
+hand a constant is a value that remains fixed througout the execution of a program. in python there is no 
+strict constant, bit in common practice to nmae constant varibels in all capital letters to indicate that 
+their values should not be changed.
+
+
+x=5
+
+x=10
+
+PI=9.5555
+
+PI=3.14
