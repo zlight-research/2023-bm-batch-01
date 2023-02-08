@@ -49,7 +49,7 @@ end=10
 even_numbers2=[]
 odd_numbers2=[]
 
-#checking the number even or odd using for loop and if condition
+#checking the number even or odd using while loop and if condition
 
 while end>=start:
     if end%2==0:
@@ -60,7 +60,7 @@ while end>=start:
 
     end=end-1 
 
-#display even numbers and odd numbers in a range using for loop       
+#display even numbers and odd numbers in a range using while loop       
 
 print("even numbers using while loop:",even_numbers2)
 print("odd numbers using while loop:",odd_numbers2)
