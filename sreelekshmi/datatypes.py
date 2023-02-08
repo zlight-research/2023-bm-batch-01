@@ -1,0 +1,12 @@
+height=154.23
+print(type(height))
+year=2020 
+print(type(year))
+subject='malayalam'
+print(type(subject))
+fruits=['orange','apple']
+print(type(fruits))
+x=1+2j
+print(type(x))
+x=True
+print(type(x))
