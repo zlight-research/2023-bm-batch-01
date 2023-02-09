@@ -1,0 +1,25 @@
+# difference between variable and constants?
+
+# Python Variables
+    # a variable is a storage area to hold data. For example,
+    #   number = 10 (number is the variable storing the value 10)
+
+
+
+# Python Constants
+
+    # A constant is a special type of variable whose value cannot be changed.In Python, constants are usually declared and assigned in a module (a new file containing variables, functions, etc which is imported to the main file).
+
+# declare constants 
+PI = 3.14
+GRAVITY = 9.8
+
+# Create a main.py:
+
+# import constant file we created above
+# import constant
+# print(constant.PI) # prints 3.14
+# print(constant.GRAVITY) # prints 9.8
+# In the above example, we created the constant.py module file. Then, we assigned the constant value to PI and GRAVITY.
+# After that, we create the main.py file and import the constant module. Finally, we printed the constant value.
+
