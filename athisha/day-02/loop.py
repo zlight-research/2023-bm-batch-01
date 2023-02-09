@@ -27,14 +27,14 @@ oddNum = []
 
 
 while ending >= starting:  # while loop checking condition
-    if end % 2 == 0:
+    if ending % 2 == 0:
    
-        evenNum.append(end)
+        evenNum.append(ending)
     else:
 
-        oddNum.append(end)
+        oddNum.append(ending)
 
-    end = end-1
+    ending = ending-1
 
 
 print("even numbers:", evenNum)
