@@ -15,18 +15,44 @@ Rating Result>100 : Extra Milestone
 <59 :Needs Improvement"""
 
 
-First_name = input("Enter Your First name:")  # Enter name,age,rating,gender
-Last_name = input("Enter Your last name:")
-Gender = input("Enter Your gender:").lower()  # convert the lowercase
-Age = int(input("Enter Your age:"))
-Rating = int(input("Enter Your rating:"))
-
-# the conditions
-if Gender == "MALE":
-    print("name:Mr", Last_name.title(), First_name.title())
-elif Gender == "FEMALE":
-    if Age <= 30:
-        print("name:Miss", Last_name.title(), First_name.title())
+while True:
+    # enter your name,age,gender,rating
+    First_Name = input("Enter Your First Name:")
+    Last_Name = input("Enter Your Last Name:")
+    if First_Name or Last_Name:
+        break
     else:
-        print("name:Mrs", Last_name.title(), First_name.title())
-print("Rating Table")
+        print("User Must enter any one of the fields") 
+
+while True:
+    Gender = input("Enter The Gender:").lower()
+    if Gender in ["male", "female"]:
+        break
+    else:
+        print("Enter Your Correct Gender")
+
+Age = int(input("Enter Your Age:"))
+Rating = int(input("Enter Your Ratings:"))
+
+if Gender == "male":
+    prefix = "Mr"
+elif Gender == "female":
+    if Age <= 30:
+        prefix = "Miss"
+    else:
+        prefix = "Mrs"
+
+print("Name:", prefix, Last_Name.title(), First_Name.title())
+
+# Rating table
+print("Rating Table\n Rating")  
+if Rating < 60:
+    print("Performance Result : Needs Improvement")
+elif 60 <= Rating <= 89:
+    print("Performance Result : Good")
+elif 90 <= Rating <= 100:
+    print("Performance Result : Outstanding")
+else:
+    print("Performance Result : Extra Milestone")
+
+

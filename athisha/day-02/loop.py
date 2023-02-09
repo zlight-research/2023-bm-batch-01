@@ -17,17 +17,16 @@ while n <= a:  # while loop checking condition
 
  #    ////////////////////ONE MORE///////////////
 
-start = 1
-end = 10
+starting = 1
+ending = 10
 
-# empty list created
+# empty list even and odd
 
 evenNum= []
 oddNum = []
 
-# while loop  condition
 
-while end >= start:  # while loop checking condition
+while ending >= starting:  # while loop checking condition
     if end % 2 == 0:
    
         evenNum.append(end)
