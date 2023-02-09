@@ -1,0 +1,26 @@
+<<<<<<< HEAD
+Difference between variable and constants ?
+
+variable
+ 1) Variable cannot have fixed values.
+ 2)variable is container storing data values.
+ 3)variables are represented alphabets and symbols.
+ 
+ 
+ Constant
+1)constant does not change its value over time , if its fixed value.
+2)The value of variable is unique.
+=======
+Difference between variable and constants ?
+
+variable
+ 1) Variable cannot have fixed values.
+ 2)variable is container storing data values.
+ 3)variables are represented alphabets and symbols.
+ 
+ 
+ Constant
+1)constant does not change its value over time , if its fixed value.
+2)The value of variable is unique.
+>>>>>>> 8a72dbc1795ce6443aa76d087adac76391b222e2
+3)mainly represnted numbers.
