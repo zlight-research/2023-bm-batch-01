@@ -7,7 +7,6 @@ Input = “zlight research”
 Assign to 2 variables, Displayed as given below"""
 
 
-import re
 # Charaters
 
 s = "zlight research"  # s is a varible used to store
@@ -16,8 +15,3 @@ t = s.split()  # Calling split function
 
 print("FirstWord =", t[0].title())  # print value
 print("SecondWord =", t[1].title())
-
-# String using
-s = "zlight research"
-
-print(re.split('\W+', s))
