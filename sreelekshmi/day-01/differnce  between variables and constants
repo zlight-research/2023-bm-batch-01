@@ -7,6 +7,7 @@ variable
  
  
  Constant
+ 
 1)constant does not change its value over time , if its fixed value.
 2)The value of variable is unique.
 3)mainly represnted numbers.
