@@ -11,10 +11,17 @@ number_2 = 3
 if number_1 == number_2:
     print('Number 1 and Number 2 are equal')
 
-if number_1 > number_2:
+elif number_1 > number_2:
     print('Number 1 greater than Number 2')
 
-if number_1 < number_2:
+elif number_1 < number_2:
     print('Number 1 less than Number 2')
+else:
+    print('Invalid number')
 
-#  if statement in single line ?
+#  if else statement in single line ?
+
+
+number_1 = 2
+number_2 = 3
+print('Number 1 less than Number 2') if number_1 < number_2 else print('Number 1 and Number 2 are equal')

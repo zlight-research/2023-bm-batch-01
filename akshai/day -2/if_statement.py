@@ -14,7 +14,7 @@ if number_1 == number_2:
 if number_1 > number_2:
     print('Number 1 greater than Number 2')
 
-if number_1 < number_2:
-    print('Number 1 less than Number 2')
+if number_1 < number_2:print('Number 1 less than Number 2')
 
+    
 #  if statement in single line ?
