@@ -20,7 +20,7 @@ else:
 
 apple=50
 orange=25
-if(apple<40 and orange<50):
+if(apple<60 and orange<50):
     """here we condition 'if' """
     """in this condn we see the 'and' Two condition   becomes become 'True' otherwise it become  F(False)"""
     print("M")
