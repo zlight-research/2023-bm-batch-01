@@ -23,6 +23,14 @@ school[0]["name"]="shobana"
 """[0] is the index of list"""
 print(school)
 
+"""Update Gender "Male" only for "Ajay" record"""
+school=[{"id":1, "name":"Yadhu", "age":25},
+{"id":2, "name":"Ajay", "age":16},
+{"id":3, "name":"Syam", "age":22}]
+school[1]["Gender"]="Male"
+"""In this we can add Gender :male only for Ajay index[1]"""
+print(school)
+
 
 
 
