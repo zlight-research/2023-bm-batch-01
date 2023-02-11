@@ -27,7 +27,7 @@ print(sorted(myDict, key=lambda i: i['age']))
 # 2. Change the Name of id = 3 from syam to Shobhana
 
 mydict1 = {"id": 3, "name": "Syam", "age": 22}
-mydict1['Syam'] = 'Shobhana'  # changing value
+mydict1['name'] = 'Shobhana'  # changing value
 print(mydict1)
 
 
