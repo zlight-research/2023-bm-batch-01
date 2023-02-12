@@ -32,7 +32,7 @@ update=dict[2]
 update.update({'name':'Shobhana'})
 print(dict)
 
-#1
+#3
 dict=[
 {"id":1, "name":"Yadhu", "age":25},
 {"id":2, "name":"Ajay", "age":16},
