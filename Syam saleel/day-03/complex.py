@@ -27,10 +27,10 @@ dict=[
 {"id":2, "name":"Ajay", "age":16},
 {"id":3, "name":"Syam", "age":22}]
 
-for item in dict:
-    if item['id']==3:
-        item['name']='shobhana'
-        print(dict)
+update=dict[2]
+#to update the name syam to shobhana
+update.update({'name':'Shobhana'})
+print(dict)
 
 #1
 dict=[
