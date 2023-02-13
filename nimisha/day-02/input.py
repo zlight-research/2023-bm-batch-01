@@ -62,21 +62,23 @@ if gender_indentity=="MALE":
     print("name:Mr", F_name.capitalize(),L_name.capitalize() )
 elif gender_indentity=="FEMALE":
     if age<=25:
-     print("name:Miss", F_name.capitalize(),L_name.capitalize() )
+     print("name:Miss", F_name.capitalize(),L_name.capitalize())
     else:
-        print("name:Mrs", F_name.capitalize(),L_name.capitalize())
+         print("name:Mrs", F_name.capitalize(),L_name.capitalize())
+else:
+        print("no gender is found")
         print("*******")
         # PERFORMANCE RATING
-    print('performance Rating')
-    print("*******")
-    if rate>100:
-        print("performance Result : Extra Milestone")
-    elif rate>=90 and rate<=100:
-        print("performance Result : Outstanding")
-    elif rate>=60 and rate<=89:
-        print("performance Result : Good")
-    else:
-        print("performance Result : Needs Improvement")
+        print('performance Rating')
+        print("*******")
+        if rate>100:
+            print("performance Result : Extra Milestone")
+        elif rate>=90 and rate<=100:
+            print("performance Result : Outstanding")
+        elif rate>=60 and rate<=89:
+            print("performance Result : Good")
+        else:
+            print("performance Result : Needs Improvement")
 
 
         
