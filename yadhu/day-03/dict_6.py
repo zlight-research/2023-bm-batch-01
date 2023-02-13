@@ -1,5 +1,4 @@
-
-"""VI. Consider below Dictionary"""
+#6
 current_dictionary = { 'product_id': '0x24e78',
 'product_label': 'strawberry',
 'fulfillment':
@@ -22,17 +21,11 @@ current_dictionary = { 'product_id': '0x24e78',
 'service_function': 'packaging system'
 }
 ]}}
-"""
-services = current_dictionary['fulfillment']['services']
-service_ids = [service['service_id'] for service in services]
-print(service_ids)
-"""
-
-
-#2
-key = "product_label"
-value = current_dictionary.get(key)
-if value:
-    print(value)
-else:
-    print("Key is not at all present in the dictionary")
+list_id=[]
+x=current_dictionary.get('fulfillment')
+y=x.get('services')
+id_1=y[0]['service_id']
+list_id.append(id_1)
+id_2=y[1]['service_id']
+list_id.append(id_2)
+print(" service_ids=",list_id)
