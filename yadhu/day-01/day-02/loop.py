@@ -30,7 +30,7 @@ print("odd_number=",odd_con)
 #empty list to store the even and odd number
 even=[]
 odd=[]
-#initialize the value of num as 10
+#initialize the value of num as 10 
 num=10
 # iterating each number in list
 

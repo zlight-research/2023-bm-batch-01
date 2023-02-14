@@ -1,15 +1,11 @@
 """Use FOR and WHILE loop to display the below manner."""
 """EVEN NUMBER"""
-for num in range(10,0,-2): 
-    """Here we give for loop and give Range(10,0,-2,) 
-    Here 10 to 0 numbers """
-      
-    print(num)
-
+print("Even num:")
+for i in range(10,0,-2):
+    if(i%2==0):"""In even number we get i%2===0"""
+    print(i)
 """ODD NUMBER"""
-for num in range(9,0,-2): 
-    """Here we give for loop and give Range(9,0,-2,) 
-    Here 9 to 0 numbers """
-      
-    print(num)   
-
+print(" Odd num:")
+for i in range(9,0,-2):
+    if(i%2!=0):"""In odd number we get i%2===0"""
+    print(i)
