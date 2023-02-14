@@ -22,6 +22,7 @@ current_dictionary = { 'product_id': '0x24e78',
 'service_function': 'packaging system'
 }
 ]}}
+
 """
 services = current_dictionary['fulfillment']['services']
 service_ids = [service['service_id'] for service in services]
