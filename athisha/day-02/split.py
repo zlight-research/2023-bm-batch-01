@@ -15,4 +15,4 @@ value = input.split()  # Calling split function
 
 print("FirstWord =", value[0].title())  # print value
 print("SecondWord =", value[1].title())
-print(input.title())
+print("Input =" ,input.title())
