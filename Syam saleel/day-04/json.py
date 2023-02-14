@@ -10,10 +10,10 @@ Note :  Include Exception handling, proper comments and meaningful variable name
 import json
 sample_dict = { "Name":"Syam", "Age":20 }
 try:
-    with open("E:\\Employee.json", "w") as f:
-        json.dump(sample_dict, f)
+    f = open("G:\\2023-bm-batch-01\\Syam saleel\\day-04\\new.json", "w")
+    json.dump(sample_dict, f)
 except Exception as e:
-    print("Error writing JSON file:", e)
+    print("Error ", e)
 
 # Read the JSON file
 """ json.dump() function is used to write the dictionary to disk, and 
