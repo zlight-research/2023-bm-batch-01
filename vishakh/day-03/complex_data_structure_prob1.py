@@ -19,21 +19,25 @@ complex_data=[
 {"id":2, "name":"Ajay", "age":16},
 {"id":3, "name":"Syam", "age":22}]
 
-# print(complex_data)
-# print("*"*100)
-# sorted_dic=sorted(complex_data,key=lambda d: d['age'])
-# print(sorted_dic)
+#sorted a value in complex data type using lambda function
+
+print(complex_data)
+print("*"*100)
+sorted_dic=sorted(complex_data,key=lambda d: d['age'])
+print(sorted_dic)
 
 
-for count,data in enumerate(complex_data):
-    # print(count,data)
-    if count+1 == len(complex_data):
-        break    
-    if data['age'] >complex_data[count+1]['age']:
-        print("pass")
+""" Update a value in sample dict """
 
-    
+complex_data[2]["name"]="shobana"
+print(complex_data)
 
+print("*"*148)
+
+complex_data[1]["gender"]="male"
+print(complex_data)
+       
+       
     
 
 
