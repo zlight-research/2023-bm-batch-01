@@ -24,18 +24,19 @@ complex_data=[
 print(complex_data)
 print("*"*100)
 sorted_dic=sorted(complex_data,key=lambda d: d['age'])
-print(sorted_dic)
+print("\n",sorted_dic)
+print("*"*100)
 
 
 """ Update a value in sample dict """
 
 complex_data[2]["name"]="shobana"
-print(complex_data)
+print("\n",complex_data)
 
 print("*"*148)
 
 complex_data[1]["gender"]="male"
-print(complex_data)
+print("\n",complex_data)
        
        
     
