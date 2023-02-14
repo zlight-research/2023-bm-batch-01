@@ -18,6 +18,7 @@ Note :  Include Exception handling, proper comments and meaningful variable name
 "C:\Temp\Employee.json"
 dict = json.loads("Employee.JSON")"""
 
+import json
 import json # json library imported
 sample_dict = '{ "Name":"Syam", "Age":20 }'  # json data string
 # Decoding or converting JSON format in dictionary using loads()
@@ -42,10 +43,13 @@ result.update(dict)
 # the result is a JSON string:
 print(json.dumps(result))
 
+"""3. Please Re-write to disk."""
 
-
-
-
+my_dict = {"Name": "Syam", "Age": 20, "remarks": "Modified"}
+with open(r"E:\zlight\2023-bm-batch-01\athisha\day-04\file_Re-write_read.txt", 'a') as file:
+    data = json.dumps(my_dict)
+    file.write(data)
+    print("hi")
 
 
 
