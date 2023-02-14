@@ -2,6 +2,6 @@
 a=14
 b=15
 if b > a:
-  print("T")
+  print("M")
 else:
   print("F")
