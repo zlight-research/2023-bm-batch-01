@@ -18,3 +18,18 @@ except Exception as e:
 # Read the JSON file
 """ json.dump() function is used to write the dictionary to disk, and 
 the json.load() function is used to read the contents of the file into a Python dictionary."""
+try:
+    f = open("day4.txt", "r")
+    dict_2= json.load(f)
+    f.close()
+except Exception as e:
+    print("Error reading JSON file:", e)
+
+dict_2["remarks"] = "Modified"
+
+try:
+    f = open("day4.txt", "w")
+    json.dump(dict_2, f)
+    f.close()
+except Exception as e:
+    print("Error writing JSON file:", e)
