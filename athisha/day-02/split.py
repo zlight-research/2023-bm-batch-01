@@ -9,7 +9,7 @@ Assign to 2 variables, Displayed as given below"""
 
 # Charaters
 
-input = "zlight research"  # s is a varible used to store
+input = "zlight research"  # input is a varible used to store
 
 value = input.split()  # Calling split function
 
