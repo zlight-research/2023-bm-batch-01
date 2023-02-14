@@ -44,11 +44,13 @@ result.update(dict)
 print(json.dumps(result))
 
 """3. Please Re-write to disk."""
-
-my_dict = {"Name": "Syam", "Age": 20, "remarks": "Modified"}
+# Define the dictionary
+my_dict = {"Name": "Syam", "Age": 20, "remarks": "Modified"} 
+# Open the file in append mode
 with open(r"E:\zlight\2023-bm-batch-01\athisha\day-04\file_Re-write_read.txt", 'a') as file:
+    # Convert the dict to a string ,json.dumps() written to a file called file_Re-write_read.txt
     data = json.dumps(my_dict)
-    file.write(data)
+    file.write(data)# The string to the file
     print("hi")
 
 
