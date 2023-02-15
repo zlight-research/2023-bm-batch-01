@@ -3,7 +3,7 @@ import datetime
 today = datetime.datetime.today()
 
 
-d=today.strftime("%B/%d,/%Y %H:%M:%S")
+d=today.strftime("%Y %d %B %H:%M:%S")
 #for getting the strfunction give capital value like '%B'
 
 print("current date & time =", d)
