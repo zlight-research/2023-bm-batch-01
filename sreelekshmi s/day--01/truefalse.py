@@ -3,7 +3,7 @@
 then its convert true to "M"  and false to "F" """
 
 
-colour=input("red and black is colour, true or false?:")
+colour=input("Red and Black is colour, true or false?:")
 if colour==("true"):
     print("M")
 elif colour==("false"):
