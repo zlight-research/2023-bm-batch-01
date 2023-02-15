@@ -19,3 +19,10 @@ school=[{"id":1, "f_name":"yadhu", "l_name":"Kumar", "gender":"M", "age":25},
 {"id":3, "f_name":"syam", "l_name":"Warrier", "gender":"F", "age":22}]
 
 
+stud=[]
+for i in school:
+    if i['gender']=='M':
+        name='Mr'+i['f_name']+','+i['l_name']
+    else:
+        name='Mr'+i['f_name']+','+i['l_name']
+    stud.append({})
