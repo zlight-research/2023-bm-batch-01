@@ -25,4 +25,13 @@ for i in school:
         name='Mr'+i['f_name']+','+i['l_name']
     else:
         name='Mr'+i['f_name']+','+i['l_name']
-    stud.append({})
+    stud.append({"id":i["id"],"name":name})
+print(stud)
+
+
+
+"""Please construct below format
+
+{" Age <= 20": [{<f_name,l_name>},{<f_name,l_name>}],
+" Age > 20": [{<f_name,l_name>},{<f_name,l_name>}],
+}"""
