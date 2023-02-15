@@ -45,7 +45,7 @@ elif Gender == "female":
 print("Name:", prefix, Last_Name.title(), First_Name.title())
 
 # Rating table
-print("Rating Table\n Rating")  
+ 
 if Rating < 60:
     print("Performance Result : Needs Improvement")
 elif 60 <= Rating <= 89:
