@@ -6,16 +6,6 @@ Odd Numbers : 9,7,6,5,3,1
 """
 #While loop
 
-a = int(input("enter starting point:"))  # enter the range of number
-n = 1
-while n <= a:  # while loop checking condition
-    if n % 2 == 0:
-        print(n, "is even.")
-    else:
-        print(n, "is odd.")
-    n = n+1
-
- #    ////////////////////ONE MORE///////////////
 
 starting = 1
 ending = 10
@@ -24,7 +14,6 @@ ending = 10
 
 evenNum= []
 oddNum = []
-
 
 while ending >= starting:  # while loop checking condition
     if ending % 2 == 0:
@@ -42,17 +31,6 @@ print("odd numbers:", oddNum)
 
 #For loop
 
-
-for i in range(0, 10):
-
-    '''if i % 2 == 0:
-        print("Even numbers: ", i)
-    else:
-        print("Odd numbers:  ", i)'''
-
-    print("{} is even".format(i) if i % 2 == 0 else "{} is odd".format(i))
-
-        #    ////////////////////ONE MORE///////////////
 
 
 start = 10
