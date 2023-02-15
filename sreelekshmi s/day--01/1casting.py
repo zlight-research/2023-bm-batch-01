@@ -2,4 +2,4 @@
 
 import datetime
 date=(datetime.datetime.now())
-print ("current date is :",date.strftime("%B, %Y %d %H:%M:%S %p")) 
+print ("current date is :",date.strftime("%Y, %B %d %H:%M:%S %p")) 
