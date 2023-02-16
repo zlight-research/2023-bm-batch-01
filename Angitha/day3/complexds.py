@@ -22,9 +22,9 @@ school=[{"id":1, "f_name":"yadhu", "l_name":"Kumar", "gender":"M", "age":25},
 stud=[]
 for i in school:
     if i['gender']=='M':
-        name='Mr'+i['f_name']+' '+i['l_name']
+        name='Mr.'+i['f_name']+' '+i['l_name']
     else:
-        name='Mr'+i['f_name']+' '+i['l_name']
+        name='Mrs.'+i['f_name']+' '+i['l_name']
     stud.append({"id":i["id"],"name":name})
 print(stud)
 
