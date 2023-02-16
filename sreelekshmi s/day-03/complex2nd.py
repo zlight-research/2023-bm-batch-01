@@ -10,3 +10,4 @@
 {" Age <= 20": [{<f_name,l_name>},{<f_name,l_name>}],
 " Age > 20": [{<f_name,l_name>},{<f_name,l_name>}],}"""
 
+dict={id:1 , "name":}
