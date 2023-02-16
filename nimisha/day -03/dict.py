@@ -26,26 +26,13 @@ print("\n",sort)
 
 
 '''2.Change the Name of id = 3 from syam to Shobhana'''
-dict=[
-{"id":1, "name":"Yadhu", "age":25},
-{"id":2, "name":"Ajay", "age":16},
-{"id":3, "name":"Syam", "age":22}]
-print("dict =\n",dict)
-print("id=",dict["id"])
-print("name=",dict["name"])
 
-dict.update({"id":"3","name":"shobana"})
-print("\nUpdate dictionary=\n",dict)
-print("updated id=",dict["id"])
-print("updated name=",dict["name"])
+dict1={"id":3,"name":"syam","age":22}
+dict1['name']='shobana'
+print(dict1)
 
 
 '''3. Update Gender "Male" only for "Ajay" record.'''
-print("dict =\n",dict)
-print("id=",dict["id"])
-print("gender=",dict["gender"])
-
-dict.update({"id":"1","gender":"male"})
-print("\nUpdate dictionary=\n",dict)
-print("updated id=",dict["id"])
-print("updated gender=",dict["gender"])
+dict2={"id":2,"name":"ajay","age":16}
+dict2.update(gender="male")
+print(dict2)
