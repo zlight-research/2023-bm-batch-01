@@ -70,7 +70,7 @@ else:
         print("*******")
         # PERFORMANCE RATING
         print('performance Rating')
-        print("*******")
+        
         if rate>100:
             print("performance Result : Extra Milestone")
         elif rate>=90 and rate<=100:
