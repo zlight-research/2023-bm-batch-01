@@ -4,10 +4,10 @@ dict=[{"id":1, "f_name":"yadhu", "l_name":"Kumar", "gender":"M", "age":25},
 sort_les=[]
 sort_gre=[]
 print("*******************")
-2.1
+#2.1
 new_dict={'id':4,'name':"Mr arjun krishna"}
 print("new_dict=",new_dict)
-2.2
+#2.2
 #to get the value of age
 dict.sort(key = lambda x:x['age'])
 for data in dict:
