@@ -1,0 +1,7 @@
+Difference between variable and constants ? 
+
+Variable
+It's the name of memory location. By using which you can access data which is stored in that memory location. We can change the variable names
+
+Constant
+It's simply a value stored in a memory. We can't change that value.

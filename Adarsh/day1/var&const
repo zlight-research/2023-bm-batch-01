@@ -1,0 +1,13 @@
+3) Difference between variable and constants ?
+
+
+varaible
+==================
+A variable is a data item whose value can change during the program’s execution. Thus, as its name implies – the value can vary
+Eg:value = 3
+
+
+constant
+=================
+A constant is a data item whose value cannot change during the program’s execution. Thus, as its name implies – the value is constant.
+Eg:PI = 3.14159
