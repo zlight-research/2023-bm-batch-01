@@ -18,7 +18,7 @@ Note :  Include Exception handling, proper comments and meaningful variable name
 "C:\Temp\Employee.json"
 dict = json.loads("Employee.JSON")"""
 
-import json
+
 import json # json library imported
 sample_dict = '{ "Name":"Syam", "Age":20 }'  # json data string
 # Decoding or converting JSON format in dictionary using loads()
@@ -46,6 +46,7 @@ print(json.dumps(result))
 """3. Please Re-write to disk."""
 # Define the dictionary
 my_dict = {"Name": "Syam", "Age": 20, "remarks": "Modified"} 
+
 # Open the file in append mode
 with open(r"E:\zlight\2023-bm-batch-01\athisha\day-04\file_Re-write_read.txt", 'a') as file:
     # Convert the dict to a string ,json.dumps() written to a file called file_Re-write_read.txt

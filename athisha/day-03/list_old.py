@@ -10,3 +10,4 @@ NEW :  ['%(name)s', '%(age)s', '%(gender)s']"""
 OLD = ['name', 'age', 'gender']
 new = ['%%(%s)s' % item for item in OLD] #concatenating string  using
 print("New  : ", new)  # printing the final string list
+
