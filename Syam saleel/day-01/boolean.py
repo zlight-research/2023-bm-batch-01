@@ -1,6 +1,12 @@
 #Accept boolean variable and display "F" for False, "M" for True
-mark=input("Enter your mark:")
-if mark==10:
-  print("F")
-else:
- print("M")
+
+
+Boolean = input("enter the boolean value:")
+age = Boolean.upper()
+
+if age == "FALSE":
+    print('F')
+
+# elif evaluated to true.
+elif age == "TRUE":
+    print('M')

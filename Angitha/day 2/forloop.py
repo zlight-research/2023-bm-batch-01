@@ -12,17 +12,23 @@
 # print(obj)
 
 
-num_list = [10,9,8,7,6,5,4,3,2,1]
+num_list= 10
 even =[]
 odd = []
-for num in num_list:
-    if (num % 2 == 0 and num%2!=0):
-        even.append(num)
+for n in num_list() :
+    if n % 2 == 0:
+        print("Even Number:") 
+       
     else:
-        odd.append(num)
-print(num_list)
-print("Even Number:") 
-print("Odds Number:") 
+        print("odd Number:") 
+        
+        
+
+
+        
+# print(num)
+
+ 
 
  
 

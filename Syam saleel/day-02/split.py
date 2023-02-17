@@ -8,5 +8,6 @@ Assign to 2 variables, Displayed as given below"""
 
 input_string = "zlight research"  # s is a varible used to store
 t = input_string.split()  # Calling split function
+print(input_string)
 print("FirstWord", t[0].title())  # print value
 print("SecondWord:", t[1].title())
