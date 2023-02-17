@@ -33,14 +33,6 @@ print("Needs Improvement" if Rating <= 60 else "Good" if Rating <= 89 else "Outs
 
 
 
-
-
-
-
-
-
-
-
 """while True:
     # enter your name,age,gender,rating
     First_Name = input("Enter Your First Name:")
@@ -80,5 +72,3 @@ elif 90 <= Rating <= 100:
     print("Performance Result : Outstanding")
 else:
     print("Performance Result : Extra Milestone")"""
-
-
