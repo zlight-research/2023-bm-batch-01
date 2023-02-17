@@ -18,7 +18,7 @@ school=[{"id":1, "name":"Yadhu", "age":25},
 {"id":2, "name":"Ajay", "age":16},
 {"id":3, "name":"Syam", "age":22}]
 
-school[0]["name"]="shobana"
+school[2]["name"]="shobana"
 """In this we can rename the yadhu to shobana"""
 """[0] is the index of list"""
 print(school)

@@ -11,7 +11,7 @@ This is done by : Yadhu
 1.4 Read day4.txt save tha in day4.txt to sting.txt file in custom folder (ex: "C:\Temp\sting.txt")'''
 
 
-file = open('day4.txt','w')
+file = open('day4.txt','a')
 file.write('This is day4')
 file.write('this is done by: nimisha')
 file.close()

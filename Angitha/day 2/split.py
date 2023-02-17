@@ -5,6 +5,7 @@
 # print(company)
 
 input ="zlight research"
+input="Angitha Sheeban"
 words=input.split()
 
 print("First_word=",words[0].capitalize())
