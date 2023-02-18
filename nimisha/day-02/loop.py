@@ -24,12 +24,6 @@ while(num < len(list1)):
     num += 1
 
     # using for loop
-list2 = [10, 9,8,7, 6, 5, 4,3,2,1]
-for num in list2:
-    if num % 2 == 0:
-        print("even number:", num)
-    else :
-        num %2 !=0
-        print("odd number:", num)
+ 
         
         

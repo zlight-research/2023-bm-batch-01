@@ -1,0 +1,1 @@
+& C:/Users/LENOVO/AppData/Local/Programs/Python/Python310/python.exe f:/zlight-training/2023-bm-batch-01/nimisha/day-04/create.py
