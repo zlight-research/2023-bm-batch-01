@@ -23,15 +23,10 @@ current_dictionary = { 'product_id': '0x24e78',
 }
 ]}}
 
-"""
-services = current_dictionary['fulfillment']['services']
-service_ids = [service['service_id'] for service in services]
-print(service_ids)
-"""
 
 
 #2
-key = "product_label"
+key = input("enter the key:-")
 value = current_dictionary.get(key)
 if value:
     print(value)
