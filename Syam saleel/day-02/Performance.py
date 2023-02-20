@@ -1,11 +1,38 @@
 
 
+"""4. Enter input using python code
+First Name
+Last Name
+Gender
+Age
+Rating
+Display result as:
+Name : <Mr / Miss / Mrs.> <Last Name>, <First Name>
+Rating Table
+Rating
+Rating Result>100 : Extra Milestone
+90-100 :Outstanding
+60-89 :Good
+4. Enter input using python code
+First Name
+Last Name
+Gender
+Age
+Rating
+Display result as:
+Name : <Mr / Miss / Mrs.> <Last Name>, <First Name>
+Rating Table
+Rating
+Rating Result>100 : Extra Milestone
+90-100 :Outstanding
+60-89 :Good
+
+"""
 
 
 
-
-# Input values
-first_name = input("Enter First Name: ").capitalize()
+#Input values
+first_name = input("Enter First Name: ")
 last_name = input("Enter Last Name: ")
 gender = input("Enter Gender (M/F): ")
 age = int(input("Enter Age: "))
