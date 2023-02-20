@@ -26,7 +26,7 @@ current_dictionary = { 'product_id': '0x24e78',
 
 
 #2
-key = input("enter the key:-")
+key =  input("enter the key:-")
 value = current_dictionary.get(key)
 if value:
     print(value)

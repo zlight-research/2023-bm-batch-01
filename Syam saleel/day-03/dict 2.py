@@ -55,6 +55,5 @@ for work_order in wo_data:
     elif P_dict["work_order_type"] == "GENERAL":
         main_dict["GENERAL"].append({"wo_id": P_dict["wo_id"], 
                                   "work_order_details": P_dict["work_order_details"],
-                                  "wo_date": P_dict["work_order_date"]})
-    
+                                "wo_date":  P_dict["work_order_date"]})
 print(main_dict)

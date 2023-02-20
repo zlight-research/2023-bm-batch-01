@@ -30,7 +30,7 @@ data = [{"id":1, "f_name":"yadhu", "l_name":"Kumar", "gender":"M", "age":25},
 
 new_dict={"age  of <=20":[],"age of > 20":[]}
 
-for itemm in data:
+for itemm  in data:
     if itemm["age"]<=20:
         new_dict["age  of <=20"].append({"f_name": itemm["f_name"], "l_name": itemm["l_name"]})
     else:
