@@ -27,7 +27,7 @@ day4_file.write("This is day4")
 day4_file=open(r"F:\File_handle\day4.txt",'r')
 read=day4_file.read()
 print(read)
-print("*"*100)
+
 
 #rewrite file day4.txt
 
@@ -39,7 +39,7 @@ day4_file.write("this is 4th day")
 day4_file=open(r"F:\File_handle\day4.txt",'r')
 read=day4_file.read()
 print(read)
-print("*"*100)
+
 
 #add new value into  file day4.txt
 day4_file=open(r"F:\File_handle\day4.txt",'a')
@@ -49,7 +49,7 @@ day4_file.write("\nThis is done by:vishakh")
 day4_file=open(r"F:\File_handle\day4.txt",'r')
 read=day4_file.read()
 print(read)
-print("*"*100)
+
 
 #copy day4.txt file and save to another location
 ssource_path=r"F:\File_handle\day4.txt"
