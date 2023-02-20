@@ -2,43 +2,41 @@
 Even Numbers : 10, 8, 6,4,2
 Odd Numbers : 9,7,6,5,3,1
 """
-#while loop with string
-ist1 = [10, 9,8,7, 6, 5, 4,3,2,1]
-Sum = 0
-while(Sum < len(list)):
-    # checking condition
-    if list[Sum] % 2 == 0:
-        print( "even nmber :",list[Sum])
+
+start = 10
+end = 0
+
+even=[]
+odd=[]
+
+num1 = start
+
+while num1 >= end:
+    if (num1%2==0):
+        even.append(num1)        
     else:
-      list[Sum] % 2!=0 
-      print( "odd nmber :",list[Sum])
-      
+        odd.append(num1)         
 
-    # increment Sum
-    Sum += 1
-"""print("Odd Numbers : ", end="")
-i = 9
-while i >= 1:
-    print(i, end=", ")
-    i -= 2
-    i -= 1
+    num1 -= 1
 
-#while loop with integer
-even_numbers = []
-i = 10
-while i >= 2:
-    even_numbers.append(i)
-    i -= 2
-print((even_numbers))
-"""
+print("Even Numbers:", even)
+print("Odd Numbers:", odd)
+
+
 
 #For loop
-
-list = [10, 9,8,7, 6, 5, 4,3,2,1]
-for Sum in list:
-    if Sum % 2 == 0:
-        print("even number:", Sum)
-    else :
-        Sum %2 !=0
-        print("odd number:", Sum)
-        
+num_list = list(range(1, 10)) 
+ 
+odd_nums = [] 
+even_nums = [] 
+ 
+for x in num_list:     
+    if x % 2 == 0:         
+        even_nums.append(x) 
+    else:        
+        odd_nums.append(x) 
+ 
+print("even numbers:",even_nums) 
+#[2, 4, 6, 8] 
+print("odd numbera:",odd_nums) 
+#[1, 3, 5, 7, 9] 
