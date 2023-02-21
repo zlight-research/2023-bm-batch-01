@@ -1,5 +1,5 @@
-var = input("enter the boolean value:")
-age = var.upper()
+new = input("enter the boolean value:")
+age = new.upper()
 
 if age == "FALSE":
     print('F')
