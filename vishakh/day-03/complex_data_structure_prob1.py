@@ -22,10 +22,10 @@ complex_data=[
 #sorted a value in complex data type using lambda function
 
 print(complex_data)
-print("*"*100)
+
 sorted_dic=sorted(complex_data,key=lambda d: d['age'])
 print("\n",sorted_dic)
-print("*"*100)
+
 
 
 """ Update a value in sample dict """
@@ -33,7 +33,7 @@ print("*"*100)
 complex_data[2]["name"]="shobana"
 print("\n",complex_data)
 
-print("*"*148)
+
 
 complex_data[1]["gender"]="male"
 print("\n",complex_data)

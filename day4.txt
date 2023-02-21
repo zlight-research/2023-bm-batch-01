@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-This is day4
-=======
-This is day4this is done by: aparna
->>>>>>> 891c70b91ef71b8a67c7d48de279eac6045601b7
+This is day4this is done by: nimishaThis is day4this is done by: nimisha
