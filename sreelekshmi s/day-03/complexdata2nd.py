@@ -24,5 +24,6 @@ for item in original_list:
     else:
         new_dict1["Age > 20"].append(full_data)
 
+
 print(new_dict)
 print(new_dict1)
