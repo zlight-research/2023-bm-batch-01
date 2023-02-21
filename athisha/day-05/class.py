@@ -24,26 +24,39 @@ seller_data = {
     }
 }"""
 
-#2. Seller class should have initialize operation to
 
-"""seller class initialize its attribute based on seller data"""
-# __init__ method initialize a seller object name, category,  items_in_stock.
 
+seller_data = {
+    "best store": {
+        "fresh fruits": [{"item": "apple", "price": 50}, {"item": "orange", "price": 80}, {"item": "banana", "price": 26}],
+        "vegetables": [{"item": "carrot", "price": 30}, {"item": "onion", "price": 65}, {"item": "zoya", "price": 15}]
+    },
+    "supreme": {
+        "cakes": [{"item": "black forest", "price": 450}, {"item": "white forest", "price": 520}, {"item": "red velvet", "price": 860}],
+        "drinks": [{"item": "pepsi", "price": 45}, {"item": "fanta", "price": 52}, {"item": "latte", "price": 100}]
+    }
+}
+
+
+class Items:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+        
+    def item_details(self):
+        # self.name = name
+        # self.price = price
+        print(self.name)
 
 class Seller:
-    def _init_(self, name, category, items_in_stock):
-        self.name = name
+    def _init_(self,seller_name,category,items_in_stock):
+        self.seller_name = seller_name
         self.category = category
         self.items_in_stock = items_in_stock
 
-    def _str_(self):
-        return f"{self.name} ({self.category}): {', '.join([item.name for item in self.items_in_stock])}"
+    def add_item(self, category, items_in_stock):
+        if category not in self.items_in_stock:
+            self.items_in_stock[category] = []
+            self.items_in_stock[category].append(items_in_stock)
 
-
-class Item:
-    def _init_(self, name, price):
-        self.name = name
-        self.price = price
-
-    def _str_(self):
-        return f"{self.name} (${self.price})"
+z = Items('athisha',500).item_details()
