@@ -15,4 +15,19 @@ dict = json.loads("Employee.JSON")
 # How to read a Dictionary and write into disk as a JSON format?
 import json
 sample_dict=  { "Name":"Syam", "Age":20 }
-dict = json.loads(sample_dict)
+try:
+    f =open("F:\\zlight-training\\2023-bm-batch-01\\nimisha\\day-04\\json","w")
+    json.dumps(sample_dict, f)
+except:
+    print("something is wrong")
+
+# to read this json file
+
+f= open("F:\\zlight-training\\2023-bm-batch-01\\nimisha\\day-04\\json","r")
+dict= json.loads(f)
+dict["remarks"]="Modified"
+
+f.close()
+
+
+
