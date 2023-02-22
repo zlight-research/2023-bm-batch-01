@@ -34,7 +34,7 @@ Rating Result>100 : Extra Milestone
 
 
 
-Performance Result : Extra Milestone
+
 
 
 
@@ -54,73 +54,87 @@ Additional requirements.
 '''
 
 
-#input some detailes first_name,last_name,gender,age,rate
+#input some detailes first_name,last_name
 
 
-first_name=input("enter first name :")
+first_name,last_name=input("enter first name:"),input("enter last name:")
 
-last_name=input("enter last name :")
+#user must enter first name and last name not enter error message display
 
-gender1=input("enter gender :")
-
-age=int(input("enter age:"))
-
-rate=int(input("enter rate:"))
-
-#gender letter case changed to lower case
-
-gender=gender1.lower()
-print("*"*100)
-
-#if condition  is True then pass to next if condition if condition is false else statement can print
-
-if first_name or last_name :
-    #if condition is true gender is male then execute the print statement if condition false then pass to elif condition
-    
-    if gender=='male' :
-            print("Mr",last_name.capitalize(),first_name.capitalize())
-    
-    #elif condition is true then pass to next if condition   false then execute else statement
-    
-    elif gender=='female':
-        #if condition is true then print statement execute if ststement is false else statement can execute and print
-        if age<=30:
-            print("Miss",last_name.capitalize(),first_name.capitalize())
-        else:
-            print("Mrs.",last_name.capitalize(),first_name.capitalize())    
-    
-    else:
-        print("gender not find")
-        
-
-else:        
-     
-    print("user must enter any one of the fields first name or last name")    
-    
-print("*"*100)
-
-#display rating table
-
-print("Rating table")
-#the rate is above 100 if condition is true print result"Extra milestone" if is false then pass to elif statement
-if rate>100:
-
-    print("Performance Result : Extra Milestone")
-
-#the rate is above 90 and below or equal to 100  elif condition is true print result "Outstanding" elif is false then pass to next elif statement
-
-elif rate>=90 and rate<=100:
-    
-    print("Performance Result : Outstanding")
-
-#the rate is above 60 and below or equal to 89 elif condition is true print "Good" elif is false else statement print"Needs Improvement"
-
-elif rate>=60 and rate<=89:
-    
-    print("Performance Result : Good")
-
+if bool(first_name)==False and bool(last_name)==False :
+    print("user must enter any one of the fields first name or last name")
 else:
+    #condition is true then input some detailes gender,age,rating
     
-    print("Performance Result : Needs Improvement")
- 
+    gender,age,rating=input("enter gender:").lower(),int(input("enter age:")),int(input("eneter rating:"))
 
+    #gender is female execute this block
+       
+    if gender=='female':
+        if gender=='female' and age>25:
+            print("Mrs.",last_name.capitalize(),",",first_name.capitalize())
+        else:
+            print("Miss.",last_name.capitalize(),",", first_name.capitalize())
+    
+    #gender is male execute this block
+    
+    elif gender=='male':
+        print("Mr.",last_name.capitalize(),",",first_name.capitalize())
+    else:
+        print("others")
+    
+
+    #rating table display
+
+    print("Needs improvemnet" if rating<59 else "good" if rating<=89 else "outstanding" if rating<100 else "extra milestone")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# print("Rating table")
+# #the rate is above 100 if condition is true print result"Extra milestone" if is false then pass to elif statement
+# if rate>100:
+
+#     print("Performance Result : Extra Milestone")
+
+# #the rate is above 90 and below or equal to 100  elif condition is true print result "Outstanding" elif is false then pass to next elif statement
+
+# elif rate>=90 and rate<=100:
+    
+#     print("Performance Result : Outstanding")
+
+# #the rate is above 60 and below or equal to 89 elif condition is true print "Good" elif is false else statement print"Needs Improvement"
+
+# elif rate>=60 and rate<=89:
+    
+#     print("Performance Result : Good")
+
+# else:
+    
+#     print("Performance Result : Needs Improvement")
+ 
+ 

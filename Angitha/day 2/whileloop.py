@@ -1,16 +1,20 @@
 """ Use FOR and WHILE loop to display the below manner."""
-"""EVEN NUMBER"""
-num = 10
-# print("even num:")
-i=int(input())
-while num >= i:
-    if (num%2!=0):
+"""EVEN NUMBER and  ODD NUMBER"""
+n= 10
+even=[]
+odd=[]
+while n>0:
+    if(n%2==0):
+        even.append(n)
+    else:
+        odd.append(n)
+    n=n-1
+val=','.join(map(str,even))
+print("Even number:",val)
+val=','.join(map(str,odd))
+print("Odd number:",val)
 
-   
-        print(num)
-    num-+1
-    # else:
-        # print("odd num:")
+
 
     
 

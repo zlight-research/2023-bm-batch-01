@@ -10,6 +10,10 @@ text ="created my first program in research zlight"
 # replace() func is used to replace the given word
 new_text =text.replace("first","second")
 
-print(" text = " ,text)
+print(" text = " ,new_text)
 # finally printing the replaced word
-print( "replaced text =" ,new_text)
+text2="created my second program in research zlight pvt ltd"
+swaping=text2.split()
+swaping[5], swaping[6]= swaping[6], swaping[5]
+new_text2="". join(swaping)
+print(new_text2)

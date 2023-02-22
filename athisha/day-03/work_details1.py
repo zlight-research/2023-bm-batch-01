@@ -31,6 +31,7 @@ data = [{"wo_id": "WO-01", "work_order_date": "2022-05-06", "work_order_details"
          "work_order_details": "Complete a work order request form to authorize maintenance tasks."},    {"wo_id": "WO-03", "work_order_date": "2022-05-08", "work_order_details": "Maintenance management decides if there is a legitimate need."}]
 
 # file using reader data
+# result_dict new dictionary
 result_dict = {row["wo_id"]: row for row in data}
 
 print(result_dict)

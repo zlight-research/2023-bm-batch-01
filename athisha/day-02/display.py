@@ -7,19 +7,6 @@ Swap the words research and zlight
 Displayed as”Created my second program in Zlight Research Pvt Ltd”.
 """
 
-
-text = "create my first program in research zlight"
-replace = text.replace("first", "second")
-person = text.split()  # separate all the words
-person[0] = person[0].title()  # title() converted to upper case
-tem = person[6].title()
-person[6] = person[5].title()
-person[5] = tem
-print(" ".join(person))
-
-
-""" OR """
-
 text1 = "create my first program in research zlight"
 # Replace "first" with "second"
 text1 = text1.replace("first", "second")  

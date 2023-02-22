@@ -50,24 +50,24 @@ Additional requirements.
 
 
 #to give input
-F_name = input("enter your first name:")
-L_name = input("enter your last name:")
+first_name = input("enter your first name:")
+last_name = input("enter your last name:")
 gender = input("enter your gender:")
 age = int(input("enter your age:"))
 rate =int( input("enter rate:"))
 
-gender_indentity=gender.upper()
+gender_identity=gender.upper()
  # CHECKING THE GENDER CONDITONS
-if gender_indentity=="MALE":
-    print("name:Mr", F_name.capitalize(),L_name.capitalize() )
-elif gender_indentity=="FEMALE":
+if gender_identity=="MALE":
+    print("name:Mr", first_name.capitalize(),last_name.capitalize() )
+elif gender_identity=="FEMALE":
     if age<=25:
-     print("name:Miss", F_name.capitalize(),L_name.capitalize())
+     print("name:Miss", first_name.capitalize(),last_name.capitalize())
     else:
-         print("name:Mrs", F_name.capitalize(),L_name.capitalize())
+         print("name:Mrs", first_name.capitalize(),last_name.capitalize())
 else:
         print("no gender is found")
-        print("*******")
+       
         # PERFORMANCE RATING
         print('performance Rating')
         

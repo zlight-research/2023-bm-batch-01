@@ -52,6 +52,9 @@ current_dictionary = {'product_id': '0x24e78',
                                'service_function': 'packaging system'
                            }
                        ]}}
+# service_ids is values
+#services  within the list
+#fulfillment sub dict
 service_ids = [service['service_id']
                for service in current_dictionary['fulfillment']['services']]
 print(service_ids) #result
