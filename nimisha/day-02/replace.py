@@ -15,5 +15,5 @@ print(" text = " ,new_text)
 text2="created my second program in research zlight pvt ltd"
 swaping=text2.split()
 swaping[5], swaping[6]= swaping[6], swaping[5]
-new_text2="". join(swaping)
+new_text2=" ".join(swaping)
 print(new_text2)

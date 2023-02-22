@@ -53,7 +53,21 @@ current_dictionary = { 'product_id': '0x24e78',
 ]}}
 
 def search_dictionary(key):
+    
     if key in current_dictionary.keys():
-        return current_dictionary(key)
+        return current_dictionary[key]
     else:
-        return "key is"
+        for i in current_dictionary:
+            if isinstance(current_dictionary[i], dict):
+                if key in current_dictionary[i].keys():
+                    return current_dictionary[i][key]
+            elif isinstance(current_dictionary[i], list):
+                for value in current_dictionary[i]:
+                    if isinstance (value, dict):
+                        if key in current_dictionary[value].keys():
+                            return value[key]
+            else:
+                print("key is not present in the dicitonary")
+                        
+new_key = input("enter a key you want :")
+print(search_dictionary(new_key))
