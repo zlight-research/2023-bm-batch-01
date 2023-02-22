@@ -71,15 +71,15 @@ else:
     #gender is female execute this block
        
     if gender=='female':
-        if gender=='female' and age>25:
-            print("Mrs.",last_name.capitalize(),",",first_name.capitalize())
+        if   age>25:
+            print(f"Mrs.{last_name.capitalize()}, {first_name.capitalize()}")
         else:
-            print("Miss.",last_name.capitalize(),",", first_name.capitalize())
+            print(f"Miss.{last_name.capitalize()}, { first_name.capitalize()}")
     
     #gender is male execute this block
     
     elif gender=='male':
-        print("Mr.",last_name.capitalize(),",",first_name.capitalize())
+        print(f"Mr.{last_name.capitalize()}, {first_name.capitalize()}")
     else:
         print("others")
     
