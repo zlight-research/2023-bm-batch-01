@@ -11,23 +11,28 @@
 " Age > 20": [{<f_name,l_name>},{<f_name,l_name>}],
 }"""
 
-my_dict = [{"id": 1, "f_name": "yadhu", "l_name": "Kumar", "gender": "M", "age": 25},
-        {"id": 2, "f_name": "Ajay", "l_name": "Gopi", "gender": "M", "age": 16},
-        {"id": 3, "f_name": "Syam", "l_name": "Warrier", "gender": "F", "age": 22}]
-new_dictionary = dict()
-updated_list = list()
+input_data = [
+    {"id": 1, "f_name": "yadhu", "l_name": "Kumar", "gender": "M", "age": 25},
+    {"id": 2, "f_name": "Ajay", "l_name": "Gopi", "gender": "M", "age": 16},
+    {"id": 3, "f_name": "syam", "l_name": "Warrier", "gender": "F", "age": 22}
+]
 
-new_dictionary["age <= 20"] = [] if len(new_dictionary) == 0 else 0
-new_dictionary["age > 20"] = [] if "age>20" not in new_dictionary.keys() else 0
-print("new_dictionary")
-# Add data to list and dictionary
-for length in range(len(my_dict)):
-    updated_list.append({"id": my_dict[length]["id"], "name": "Mr."+my_dict[length]["f_name"]+","+my_dict[length]["l_name"]}) if my_dict[length]["gender"] == "M" else updated_list.append(
-        {"id": my_dict[length]["id"], "name": "Mrs." + my_dict[length]["f_name"] + "," + my_dict[length]["l_name"]})
-    new_dictionary["age <= 20"].append({my_dict[length]["f_name"]+","+my_dict[length]["l_name"]}
-                                       ) if my_dict[length]["age"] <= 20 else new_dictionary["age > 20"].append({my_dict[length]["f_name"] + "," + my_dict[length]["l_name"]})
-# Display data
-print("New list : ", updated_list, "\nNew dict : ", new_dictionary)
+output_data = []  # Create a dict and inputDataList
+# prefix is using Mr,Mrs and Miss gender of the person
+for person in input_data:
+    name_prefix = "Mr." if person["gender"] == "M" else "Mrs."
+    full_name = name_prefix + person["f_name"] + "," + person["l_name"]
+    output_data.append({"id": person["id"], "name": full_name})
+# Display new list
+print("New list: ", output_data)
 
-# dictionary with {id: <>, "name":<"Mr. / Mrs. f_name, l_name">}
-print(dict())  
+output_format = {"age <= 20": [], "age > 20": []} #create another dictionary
+# 
+for person in input_data:
+    full_name = person["f_name"] + "," + person["l_name"]
+    if person["age"] <= 20:
+        output_format["age <= 20"].append(full_name)
+    else:
+        output_format["age > 20"].append(full_name)
+# Display new dict
+print("New dict: ", output_format)

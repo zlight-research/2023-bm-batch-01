@@ -16,10 +16,13 @@ update.update({'name':'Shobhana'})
 print(dict)
 #1.3
 #to iterate the dictionary
-for data in dict:
-    #get() to return the value of the given key
-    name=data.get('name')
-    #checking condition
-    if name=="Ajay":
-        data.update({'Gender ':'Male'})
+# for data in dict:
+#     #get() to return the value of the given key
+#     name=data.get('name')
+#     #checking condition
+#     if name=="Ajay":
+#         data.update({'Gender ':'Male'})
+# print(dict)
+list=dict[1]
+list.update({'Gender ':'Male'})
 print(dict)
