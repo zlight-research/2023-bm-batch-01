@@ -47,7 +47,7 @@ Additional requirements.
 * Incase only one name displayed, there should not comma character (,)
 
 *Incase there is blank for First Name OR Last Name, display message  as "User must enter any one of the fields "First Name" or Last Name".'''
-
+ 
 
 #to give input
 first_name = input("enter your first name:")
@@ -58,6 +58,8 @@ rate =int( input("enter rate:"))
 
 gender_identity=gender.upper()
  # CHECKING THE GENDER CONDITONS
+if not first_name or not last_name ==None:
+    print("User must enter any one of the fields:")
 if gender_identity=="MALE":
     print("name:Mr", first_name.capitalize(),last_name.capitalize() )
 elif gender_identity=="FEMALE":
@@ -66,21 +68,12 @@ elif gender_identity=="FEMALE":
     else:
          print("name:Mrs", first_name.capitalize(),last_name.capitalize())
 else:
-        print("no gender is found")
+    print("no gender is found")
        
-        # PERFORMANCE RATING
-        print('performance Rating')
-        
-        if rate>100:
-            print("performance Result : Extra Milestone")
-        elif rate>=90 and rate<=100:
-            print("performance Result : Outstanding")
-        elif rate>=60 and rate<=89:
-            print("performance Result : Good")
-        else:
-            print("performance Result : Needs Improvement")
+        # PERFORMANCE RATING 
+print("Needs improvemnet" if rate<59 else "good" if rate<=89 else "outstanding" if rate<100 else "extra milestone")
 
 
-        
+
 
 
