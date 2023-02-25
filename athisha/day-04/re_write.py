@@ -4,7 +4,7 @@ import json  # json library imported
 my_dict = {"Name": "Syam", "Age": 20, "remarks": "Modified"}
 
 # Open the file in append mode
-with open(r"E:\zlight\2023-bm-batch-01\athisha\day-04\file_Re-write_read.txt", 'a') as file:
+with open(r"D:\zlight\2023-bm-batch-01\athisha\day-04\file_Re-write_read.txt", 'a') as file:
     # Convert the dict to a string ,json.dumps() written to a file called file_Re-write_read.txt
     data = json.dumps(my_dict)
     file.write(data)  # The string to the file

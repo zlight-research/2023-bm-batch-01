@@ -125,9 +125,7 @@ def is_item_in_stock(seller_name, item_name):
         return seller_objs[seller_name].is_item_in_stock(item_name)
     else:
         return "Seller not found."
-
-
-"""# Test the Seller and Item objects
+"""
 print(seller_objs['best store'].get_item_cost('apple'))  # Output: 50
 print(is_item_in_stock('best store', 'Carrot'))  # Output: Item is present in stock.
 print(is_item_in_stock('supreme', 'pepsi'))  # Output: Item is present in stock.

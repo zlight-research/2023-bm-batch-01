@@ -23,7 +23,7 @@ import json # moduel inserted
 
 sample_dict = { "Name":"Syam", "Age":20 } 
 # open ()file path,with  stmt using automatically close file object
-with open(r"E:\zlight\2023-bm-batch-01\athisha\day-04\Employee.json", 'w') as file: # w writing and any exiting content truncated
+with open(r"D:\zlight\2023-bm-batch-01\athisha\day-04\Employee.json", 'w') as file: # w writing and any exiting content truncated
     # the json file where the output must be stored
     json.dump(sample_dict, file)
 
