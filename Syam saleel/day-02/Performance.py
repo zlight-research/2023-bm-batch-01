@@ -39,18 +39,22 @@ age = int(input("Enter Age: "))
 rating = int(input("Enter Rating: "))
 
 # Get salutation based on gender
-if gender == "M":
+if gender == "Male":
     salutation = "Mr."
-elif gender == "F":
-    salutation = "Mrs/miss" 
+elif gender == "Female":
+    salutation = "Mrs"
+    if age <=18:
+        salutation="Miss" 
 else:
-    salutation = ""
+    print("no gender")
+    salutation = " "
 
-# Construct full name
+# Construct full names
 if first_name and last_name:
     full_name = f"{salutation} {first_name},{last_name} "
 else:
-    full_name = first_name + last_name
+     print("User must enter the first name and last name")
+     full_name = " "#first_name + last_name
 
 # Determine performance result based on rating
 if rating > 100:
@@ -61,10 +65,7 @@ elif rating >= 60:
     performance = "Good"
 else:
     performance = "Needs Improvement"
-
-# Display results
 print(f"Name: {full_name}")
-
 print(f"Performance Result : {performance}")
 
 
