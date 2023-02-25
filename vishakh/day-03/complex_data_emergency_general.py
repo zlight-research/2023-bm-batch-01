@@ -46,3 +46,16 @@ wo_data = [{"WO-01","2022-05-06","GENERAL","Identify what needs to be done to re
 "WO-03","2022-05-08","EMERGENCY","Maintenance management decides if there is a legitimate need."},
 {"WO-04","2022-05-09","EMERGENCY","Work orders are assessed by considering the urgency, existing backlog, and team availability."}
 ]
+
+
+
+
+                
+                
+              
+        
+             
+            
+                   
+        
+

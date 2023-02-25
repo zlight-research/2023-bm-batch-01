@@ -76,7 +76,7 @@ second_dic_format=[]
 for data in first_dict_format:
 #append a dictionary of format data
 
-     second_dic_format.append({data["wo_id"]:{"work_order_date":data["work_order_date"],"work_order_detailes":data["work_order_details"]}})
+     second_dic_format.append({data["wo_id"]:{"work_order_detailes":data["work_order_details"],"work_order_date":data["work_order_date"]}})
 
 #display second format output     
 print(second_dic_format)         
