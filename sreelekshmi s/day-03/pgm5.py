@@ -47,7 +47,6 @@ current_dictionary = { 'product_id': '0x24e78',
                                             }
                                              ]}}
 
-
 s=[service['service_id']
         for service in current_dictionary['fulfillment']['services']]
 print(s)
