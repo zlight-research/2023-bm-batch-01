@@ -6,8 +6,10 @@ odd=[]
 while n>0:
     if(n%2==0):
         even.append(n)
+        """even num"""
     else:
         odd.append(n)
+        """odd num"""
     n=n-1
 val=','.join(map(str,even))
 print("Even number:",val)

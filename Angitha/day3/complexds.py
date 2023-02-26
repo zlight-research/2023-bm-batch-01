@@ -42,7 +42,9 @@ my_dict = {}
 for i in school:
     if i["age"] <= 20:
         my_dict["Age <= 20"] = my_dict.get("Age <= 20", []) + [{"name": f"{i['f_name']} {i['l_name']}"}]
+        """Age<=20 will display"""
     else:
         my_dict["Age > 20"] = my_dict.get("Age > 20", []) +  [{"name": f"{i['f_name']} {i['l_name']}"}]
+        """Age>0 will display"""
 
 print(my_dict)
