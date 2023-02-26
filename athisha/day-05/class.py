@@ -106,9 +106,8 @@ class Seller:
                 return "Item is present in stock."
         return "Item is not present in stock."
 
-# Create item in the seller_data dictionary
-seller_objs = {}
 
+seller_objs = {}
 
 for seller_name, seller_data in seller_data.items():
     seller_objs[seller_name] = Seller(seller_name, "")
@@ -119,17 +118,20 @@ for seller_name, seller_data in seller_data.items():
             price_per_unit = item['price']
             seller_objs[seller_name].add_item(item_name, price_per_unit)
 
-print(seller_objs['best store'].get_item_cost('apple'))  # Output: 50
-# Item is present in stock.
-print(seller_objs['best store'].is_item_in_stock('Carrot'))
-# Item is present in stock.
-print(seller_objs['supreme'].is_item_in_stock('pepsi'))
-# Item is not present in stock.
-print(seller_objs['supreme'].is_item_in_stock('ice cream'))
 
-key = input("Enter a key: ")
-if key in seller_data:
-    print(seller_data[key])
-else:
-    print("Key not found")
+#  present in a seller's stock (case-insensitive)
+def is_item_in_stock(seller_name, item_name):
+    if seller_name in seller_objs:
+        return seller_objs[seller_name].is_item_in_stock(item_name)
+    else:
+        return "Seller not found."
+"""
+print(seller_objs['best store'].get_item_cost('apple'))  # Output: 50
+print(is_item_in_stock('best store', 'Carrot'))  # Output: Item is present in stock.
+print(is_item_in_stock('supreme', 'pepsi'))  # Output: Item is present in stock.
+print(is_item_in_stock('supreme', 'ice cream'))  # Output: Item is not present in stock."""
+
+seller_name = input("Enter the name of the seller: ")
+item_name = input("Enter the name of the item: ")
+print(is_item_in_stock(seller_name, item_name))
 
