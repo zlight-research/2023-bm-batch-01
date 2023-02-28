@@ -41,4 +41,5 @@ for datas in new_dict:
         "work_order_details":datas["work_order_details"],"work_order_date":datas["work_order_date"]}}
 
         ]
-print(list)
+# display  data
+print(list) 
