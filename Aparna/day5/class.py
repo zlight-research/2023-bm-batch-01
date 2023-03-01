@@ -36,7 +36,7 @@ class seller():
         self.name=seller_name
         self.category=category
         self.item=items_in_stock
-        # inherited the class
+        #item class inherited the class seller
 class item(seller):
     
     def __init__(self,seller_name,category,items_in_stock,item_name,price):
@@ -73,5 +73,6 @@ price=int(input("enter the price:"))
 seller_name=input("enter the seller name:")
 category=input("enter the category:")
 item_in_stock=input("enter the item in stock:")
+# class object created and call functions
 obj1=item(seller_name=seller_name,category=category,item_name=item_name,price=price,items_in_stock=item_in_stock)
 obj1.method()
