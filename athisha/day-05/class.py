@@ -30,20 +30,24 @@ seller_data = {
 # __init__ method initialize a seller object name, category,  items_in_stock.
 
 
-class Seller:
-    def _init_(self, name, category, items_in_stock):
-        self.name = name
-        self.category = category
-        self.items_in_stock = items_in_stock
-
-    def _str_(self):
-        return f"{self.name} ({self.category}): {', '.join([item.name for item in self.items_in_stock])}"
-
-
 class Item:
-    def _init_(self, name, price):
-        self.name = name
+    def __init__(self, item_name = "" , price = None):
+        self.name = item_name
+        self.price = price 
+    
+    def set_item(self, item_name, price):
+        self.item_name = item_name
         self.price = price
 
-    def _str_(self):
-        return f"{self.name} (${self.price})"
+class Seller:
+    def __init__(self, seller_name = "",category = "", items_in_stock = {}):
+        self.seller_name = seller_name
+        self. category = category
+        self.items_in_stock = items_in_stock
+
+    def add_item(self, item_name, price):
+        item =Item(item_name, price)
+        if self.category in self.items_in_stock:
+            self.items_in_stock[self.self.category].append({"item": item.item_name, "price": item.price})
+        else:
+            self.items_in_stock[self.self.category]=[{"item": item.item_name, "price": item.price}]
