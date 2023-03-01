@@ -56,12 +56,12 @@ current_dictionary = {'product_id': '0x24e78',
                                           }
                                       ]}}
 def search_dictionary(key):
-    results = []
+    results = [] #correspoding value append to a list
     if key in current_dictionary.keys():
         results = [current_dictionary[key]]
     else:
         for data in current_dictionary:
-            if isinstance(current_dictionary[data], dict):
+            if isinstance(current_dictionary[data], dict): 
                 if key in current_dictionary[data].keys():
                     results += [current_dictionary[data][key]]
                 elif 'services' in current_dictionary[data].keys():
