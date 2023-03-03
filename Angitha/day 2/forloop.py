@@ -1,45 +1,72 @@
 """Use FOR and WHILE loop to display the below manner."""
-# n=[] 
-# for n in range(10):
-#     if (n%2==0 and n%2!=0):
-#         print("Even number:")
-#         n.()
-#     else:
-#         print("Odd number:")
-# print(n)
 
-# obj = ["Even" if i%2==0 else "odd" for i  in range(20)] 
-# print(obj)
+"""
+Even Numbers : 10, 8, 6,4,2
 
+Odd Numbers : 9,7,6,5,3,1
+"""
 
-num_list= 10
-even =[]
-odd = []
-for n in num_list() :
-    if n % 2 == 0:
-        print("Even Number:") 
+num= 10,9,8,7,6,5,4,3,2,1
+even=[]
+odd=[]
+for n in num:
+    if(n%2==0):
+        even.append(n)
+        # print("Even Numbers:")
        
     else:
-        print("odd Number:") 
+
+        odd.append(n)
+        
+        # print("Odd Numbers:")
+val=','.join(map(str,even))
+print("Even Numbers:",val) 
+val=','.join(map(str,odd))
+print("Odd Numbers:",val) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# even=" "
+# odd=" "
+# for i in range(1,11):
+#   if i %2 ==0:
+#        even+= str(i)+","
+#   else:
+#       odd+= str(i)+ ","
+# print("even" + even[:-2])
+
+       
         
         
-
-
-        
-# print(num)
-
- 
-
- 
-
+       
     
-
-		
-		 
-			
-		
-			
- 
-    
-
-
+       
+        
+   

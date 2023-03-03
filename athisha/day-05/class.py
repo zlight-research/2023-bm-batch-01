@@ -31,7 +31,7 @@ seller_data = {
 
 
 class Item:
-    def __init__(self, item_name = "" , price = None):
+    def __init__(self, item_name = "" , price = 0):
         self.name = item_name
         self.price = price 
     
@@ -51,3 +51,10 @@ class Seller:
             self.items_in_stock[self.self.category].append({"item": item.item_name, "price": item.price})
         else:
             self.items_in_stock[self.self.category]=[{"item": item.item_name, "price": item.price}]
+
+    def get_cost(self,item_name):
+        item_name = item_name.lower()
+        if self.category in self.items_in_stock:
+            for item in self.items_in_stock[self.category]:
+                if item["item"].lower()==item_name:
+                    return item
