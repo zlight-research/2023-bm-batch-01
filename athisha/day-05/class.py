@@ -52,9 +52,14 @@ class Seller:
         else:
             self.items_in_stock[self.self.category]=[{"item": item.item_name, "price": item.price}]
 
-    def get_cost(self,item_name):
+    def get_cost(self, item_name):
         item_name = item_name.lower()
         if self.category in self.items_in_stock:
             for item in self.items_in_stock[self.category]:
-                if item["item"].lower()==item_name:
+                if item["item"].lower() == item_name:
                     return item
+        return "Item not found"
+
+    def is_item_present(self,item_name):
+        item_name = item_name.lower()
+        
