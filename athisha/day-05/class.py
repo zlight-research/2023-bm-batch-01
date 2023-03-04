@@ -39,39 +39,91 @@ seller_data = {
         "drinks": [{"item": "pepsi", "price": 45}, {"item": "fanta", "price": 52}, {"item": "latte", "price": 100}]
     }
 }
-
 class Item:
     def __init__(self, name, price):
         self.name = name
         self.price = price
 
+    def __str__(self):
+        return f"{self.name} ({self.price})"
+
+
 class Seller:
-    def __init__(self, name, category):
+    def __init__(self, name):
         self.name = name
-        self.category = category
-        self.items_in_stock = []
+        self.categories = {}
 
-    def add_item(self, item_name, price):
-        self.items_in_stock.append(Item(item_name, price))
-        
-    def get_cost(self, item_name):
-        item = self.get_item(item_name)
-        return item.price if item else None
+    def add_item(self, category, item):
+        if category not in self.categories:
+            self.categories[category] = []
+        self.categories[category].append(item)
 
-    def get_item(self, item_name):
-        return next((item for item in self.items_in_stock if item.name.lower() == item_name.lower()), None)
+    def __str__(self):
+        return f"{self.name}: {len(self.categories)} categories, {sum(len(items) for items in self.categories.values())} items"
 
-seller_name = input("Enter the name of the seller: ")
-category_name = input("Enter the name of the category: ")
-if (seller_data.get(seller_name) or {}).get(category_name):
-    item_name = input("Enter the name of the item: ")
-    item_price = float(input("Enter the price of the item: "))
-    seller = Seller(seller_name, category_name)
-    seller.add_item(item_name, item_price)
-    item = seller.get_item(item_name)
-    cost = item.price if item else None
-    has_item = bool(item)
-    print(f"{seller_name} - {category_name} - {item_name}: Cost={cost}, Has Item={has_item}")
+# Initialize seller data
+seller_data = {
+    "best store": Seller("best store"),
+    "supreme": Seller("supreme")
+}
+
+seller_data["best store"].add_item("fresh fruits", Item("apple", 50))
+seller_data["best store"].add_item("fresh fruits", Item("orange", 80))
+seller_data["best store"].add_item("fresh fruits", Item("banana", 26))
+seller_data["best store"].add_item("vegetables", Item("carrot", 30))
+seller_data["best store"].add_item("vegetables", Item("onion", 65))
+seller_data["best store"].add_item("vegetables", Item("zoya", 15))
+
+seller_data["supreme"].add_item("cakes", Item("black forest", 450))
+seller_data["supreme"].add_item("cakes", Item("white forest", 520))
+seller_data["supreme"].add_item("cakes", Item("red velvet", 860))
+seller_data["supreme"].add_item("drinks", Item("pepsi", 45))
+seller_data["supreme"].add_item("drinks", Item("fanta", 52))
+seller_data["supreme"].add_item("drinks", Item("latte", 100))
+
+
+# Insert new item
+seller_name,category,item_name,price = input("Enter the seller name: "),input("Enter the category: "),input("Enter the item name: "),int(input("Enter the price: "))
+
+if seller_name not in seller_data:
+    seller_data[seller_name] = Seller(seller_name)
+
+if category not in seller_data[seller_name].categories:
+    seller_data[seller_name].add_item(category, Item(item_name, price))
 else:
-    print(f"The category '{category_name}' does not exist for the seller '{seller_name}'")
+    for item in seller_data[seller_name].categories[category]:
+        if item.name == item_name:
+            item.price = price
+            break
+    else:
+        seller_data[seller_name].add_item(category, Item(item_name, price))
+
+
+# Search for price
+item_name = input("Enter the item name to find price: ")
+found = False
+for seller in seller_data.values():
+    for category, items in seller.categories.items():
+        for item in items:
+            if item.name == item_name:
+                print(f"{item_name} is available at {seller.name} in the {category} category for {item.price}")
+                found = True
+
+if not found:
+    print(f"{item_name} is not available at any seller")
+
+
+# Check availability
+item_name = input("Enter the item name to check availability: ")
+found = False
+for seller in seller_data.values():
+    for category, items in seller.categories.items():
+        for item in items:
+            if item.name == item_name:
+                print(f"{item_name} is available at {seller.name} in the {category} category")
+                found = True
+
+if not found:
+    print(f"{item_name} is not available")
+
 
