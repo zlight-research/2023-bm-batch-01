@@ -29,6 +29,32 @@ seller_data = {
 """seller class initialize its attribute based on seller data"""
 # __init__ method initialize a seller object name, category,  items_in_stock.
 
+class Item:
+    def __init__(self, item_name, item_price):
+        self.name = item_name
+        self.price = item_price
+
+    def __str__(self):
+        return f"{self.name} ({self.price})"
+
+
+class Seller:
+    def __init__(self, seller_name, category):
+        self.seller_name = seller_name
+        self.category = category
+
+    def get_items(self):
+        for category, item_list in seller_data[self.seller_name].items():
+            if category == self.category:
+                return [Item(item["item"], item["price"]) for item in item_list]
+
+    def add_item(self, item_name, item_price):
+        item_data = {"item": item_name, "price": item_price}
+        for category, item_list in seller_data[self.seller_name].items():
+            if category == self.category:
+                item_list.append(item_data)
+                break
+
 seller_data = {
     "best store": {
         "fresh fruits": [{"item": "apple", "price": 50}, {"item": "orange", "price": 80}, {"item": "banana", "price": 26}],
@@ -39,91 +65,28 @@ seller_data = {
         "drinks": [{"item": "pepsi", "price": 45}, {"item": "fanta", "price": 52}, {"item": "latte", "price": 100}]
     }
 }
-class Item:
-    def __init__(self, name, price):
-        self.name = name
-        self.price = price
-
-    def __str__(self):
-        return f"{self.name} ({self.price})"
 
 
-class Seller:
-    def __init__(self, name):
-        self.name = name
-        self.categories = {}
+seller_name = input("Enter the seller name: ")
+category = input("Enter the category: ")
+item_name = input("Enter the item name: ")
+item_price = int(input("Enter the item price: "))
 
-    def add_item(self, category, item):
-        if category not in self.categories:
-            self.categories[category] = []
-        self.categories[category].append(item)
+seller1 = Seller(seller_name, category)
+seller1.add_item(item_name, item_price)
 
-    def __str__(self):
-        return f"{self.name}: {len(self.categories)} categories, {sum(len(items) for items in self.categories.values())} items"
-
-# Initialize seller data
-seller_data = {
-    "best store": Seller("best store"),
-    "supreme": Seller("supreme")
+output = {
+    seller_name: {
+        category: [{"item": item.name, "price": item.price} for item in seller1.get_items()]
+    }
 }
 
-seller_data["best store"].add_item("fresh fruits", Item("apple", 50))
-seller_data["best store"].add_item("fresh fruits", Item("orange", 80))
-seller_data["best store"].add_item("fresh fruits", Item("banana", 26))
-seller_data["best store"].add_item("vegetables", Item("carrot", 30))
-seller_data["best store"].add_item("vegetables", Item("onion", 65))
-seller_data["best store"].add_item("vegetables", Item("zoya", 15))
 
-seller_data["supreme"].add_item("cakes", Item("black forest", 450))
-seller_data["supreme"].add_item("cakes", Item("white forest", 520))
-seller_data["supreme"].add_item("cakes", Item("red velvet", 860))
-seller_data["supreme"].add_item("drinks", Item("pepsi", 45))
-seller_data["supreme"].add_item("drinks", Item("fanta", 52))
-seller_data["supreme"].add_item("drinks", Item("latte", 100))
-
-
-# Insert new item
-seller_name,category,item_name,price = input("Enter the seller name: "),input("Enter the category: "),input("Enter the item name: "),int(input("Enter the price: "))
-
-if seller_name not in seller_data:
-    seller_data[seller_name] = Seller(seller_name)
-
-if category not in seller_data[seller_name].categories:
-    seller_data[seller_name].add_item(category, Item(item_name, price))
-else:
-    for item in seller_data[seller_name].categories[category]:
-        if item.name == item_name:
-            item.price = price
-            break
-    else:
-        seller_data[seller_name].add_item(category, Item(item_name, price))
-
-
-# Search for price
-item_name = input("Enter the item name to find price: ")
-found = False
-for seller in seller_data.values():
-    for category, items in seller.categories.items():
+print("Complete All seller data:")
+for seller, categories in seller_data.items():
+    print(f"{seller}:")
+    for category, items in categories.items():
+        print(f"\t{category}:")
         for item in items:
-            if item.name == item_name:
-                print(f"{item_name} is available at {seller.name} in the {category} category for {item.price}")
-                found = True
-
-if not found:
-    print(f"{item_name} is not available at any seller")
-
-
-# Check availability
-item_name = input("Enter the item name to check availability: ")
-found = False
-for seller in seller_data.values():
-    for category, items in seller.categories.items():
-        for item in items:
-            if item.name == item_name:
-                print(f"{item_name} is available at {seller.name} in the {category} category")
-                found = True
-
-if not found:
-    print(f"{item_name} is not available")
-
+            print(f"\t\t{item['item']}: {item['price']}")
 

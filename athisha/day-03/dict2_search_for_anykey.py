@@ -34,6 +34,7 @@ If Key is not present within the dictionary, it should display as "Key is not at
 """2. Traverse in the Dictionary to search for any Key, it should return the corresponding value without any errors.
 If Key is not present within the dictionary, it should display as "Key is not at all present in the dictionary"""
 
+#key is parameter
 current_dictionary = {'product_id': '0x24e78',
                       'product_label': 'strawberry',
                       'fulfillment': {'fulfillment_id': '0x24e73',
@@ -56,12 +57,12 @@ current_dictionary = {'product_id': '0x24e78',
                                           }
                                       ]}}
 def search_dictionary(key):
-    results = [] #correspoding value append to a list
+    results = []
     if key in current_dictionary.keys():
         results = [current_dictionary[key]]
     else:
         for data in current_dictionary:
-            if isinstance(current_dictionary[data], dict): 
+            if isinstance(current_dictionary[data], dict):
                 if key in current_dictionary[data].keys():
                     results += [current_dictionary[data][key]]
                 elif 'services' in current_dictionary[data].keys():
@@ -74,7 +75,5 @@ def search_dictionary(key):
 key = input("Enter a key to search for: ")
 results = search_dictionary(key)
 print(results)
-
-
 
 
