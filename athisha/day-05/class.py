@@ -37,7 +37,6 @@ class Item:
     def __str__(self):
         return f"{self.name} ({self.price})"
 
-
 class Seller:
     def __init__(self, seller_name, category):
         self.seller_name = seller_name
@@ -47,6 +46,7 @@ class Seller:
         for category, item_list in seller_data[self.seller_name].items():
             if category == self.category:
                 return [Item(item["item"], item["price"]) for item in item_list]
+        return []  # return an empty list when the specified category is not found
 
     def add_item(self, item_name, item_price):
         item_data = {"item": item_name, "price": item_price}
@@ -54,6 +54,10 @@ class Seller:
             if category == self.category:
                 item_list.append(item_data)
                 break
+
+    def to_list_dict(self):
+        categories = seller_data[self.seller_name]
+        return {category: [item for item in items] for category, items in categories.items()}
 
 seller_data = {
     "best store": {
@@ -66,27 +70,18 @@ seller_data = {
     }
 }
 
-
-seller_name = input("Enter the seller name: ")
-category = input("Enter the category: ")
-item_name = input("Enter the item name: ")
-item_price = int(input("Enter the item price: "))
+seller_name,category,item_name,item_price = input("Enter the seller name: "), input("Enter the category: "), input("Enter the item name: "),  int(input("Enter the item price: "))
 
 seller1 = Seller(seller_name, category)
 seller1.add_item(item_name, item_price)
 
-output = {
-    seller_name: {
-        category: [{"item": item.name, "price": item.price} for item in seller1.get_items()]
-    }
-}
+output = {}
+for seller_name in seller_data.keys():
+    output[seller_name] = {}
+    for category in seller_data[seller_name].keys():
+        seller = Seller(seller_name, category)
+        items = seller.get_items()
+        output[seller_name][category] = [str(item) for item in items]
 
-
-print("Complete All seller data:")
-for seller, categories in seller_data.items():
-    print(f"{seller}:")
-    for category, items in categories.items():
-        print(f"\t{category}:")
-        for item in items:
-            print(f"\t\t{item['item']}: {item['price']}")
+print(output)
 
