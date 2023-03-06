@@ -1,4 +1,4 @@
-class Seller:
+"""class Seller:
     def __init__(self, seller_name,category,items_in_stock):
         self.seller_name = seller_name
         self.category=category
@@ -16,12 +16,12 @@ class Seller:
                     return item.price
         return None
 
-"""def has_item(self, item_name):
+def has_item(self, item_name):
         for category, items in self.items_in_stock.items():
             for item in items:
                 if item.item_name.lower() == item_name.lower():
                     return True
-        return False"""
+        return False
 
 
 class Items:
@@ -73,3 +73,4 @@ for seller_name, seller in sellers.items():
         print(f"Category: {category}")
         for item in items:
             print(f"Item: {item.item_name} | Price: {item.price}")
+"""
