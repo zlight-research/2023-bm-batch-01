@@ -23,10 +23,17 @@ class item(seller):
                                 }
                             }
         #insert new item
-  
-        a={self.name:{self.category:[{"item":self.it_na,"price":self.prci}]}}
-        seller_data1.update(a)
+        
+        for data in seller_data1:
+            if data==seller_name:
+                datas=seller_data1.get(data)
+                for data in datas:
+                    if category==data:
+                         val=datas.get(category)
+                         res={"item":item_name,"price": price}
+                         val.append(res)
         print(seller_data1)
+   
     #to search price
         item=input("enter the item to find price:")
         for data in seller_data1:
