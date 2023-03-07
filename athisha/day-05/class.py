@@ -23,17 +23,12 @@ seller_data = {
         "drinks": [{"item": "pepsi", "price": 45}, {"item": "fanta", "price": 52}, {"item": "latte", "price": 100}]
     }
 }"""
-
-#2. Seller class should have initialize operation to
-
-"""seller class initialize its attribute based on seller data"""
-
-# Item class has two attributes: name and price
+# Seller class has two attributes seller_name and category
 class Item:
     def __init__(self, item_name, item_price):
         self.name = item_name
         self.price = item_price
-
+    # a string representation of an Item object.
     def __str__(self):
         return f"{self.name} ({self.price})"
 
