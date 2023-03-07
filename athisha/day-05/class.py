@@ -36,25 +36,26 @@ class Item:
 
     def __str__(self):
         return f"{self.name} ({self.price})"
-# Seller class has two attributes: seller_name and category.
+
+
 class Seller:
     def __init__(self, seller_name, category):
         self.seller_name = seller_name
         self.category = category
-# get_items method returns a list.
+
     def get_items(self):
         for category, item_list in seller_data[self.seller_name].items():
             if category == self.category:
                 return [Item(item["item"], item["price"]) for item in item_list]
-        return []  # return an empty list 
-# add_item method adds a new item to the specified category and seller in the seller_data dictionary.
+
     def add_item(self, item_name, item_price):
         item_data = {"item": item_name, "price": item_price}
         for category, item_list in seller_data[self.seller_name].items():
             if category == self.category:
                 item_list.append(item_data)
                 break
-# returns a dictionary representation of the items sold by the seller in each category.
+        else:
+            raise ValueError(f"Category '{self.category}' not found for seller '{self.seller_name}'.")
     def to_list_dict(self):
         categories = seller_data[self.seller_name]
         return {category: [item for item in items] for category, items in categories.items()}
@@ -85,4 +86,52 @@ for seller_name in seller_data.keys():
         output[seller_name][category] = [str(item) for item in items]
 # object to the output dictionary. 
 print(output)
+
+
+seller_data = {}
+
+while True:
+    seller_name = input("Enter the new seller name or type 'quit' to exit: ")
+    if seller_name.lower() == "quit":
+        break
+
+    seller_data[seller_name] = {}
+    while True:
+        category = input(f"Enter the new category or type 'done' to finish adding categories: ")
+        if category.lower() == "done":
+            break
+
+        seller_data[seller_name][category] = []
+        while True:
+            item_name = input(f"Enter the new item name or type 'done' to finish adding items: ")
+            if item_name.lower() == "done":
+                break
+
+            item_price = int(input("Enter the new item price: "))
+            seller_data[seller_name][category].append({"item": item_name, "price": item_price})
+
+print(seller_data)
+
+seller_name = input("Enter the seller name: ")
+category = input("Enter the category: ")
+item_name = input("Enter the item name: ")
+item_price = int(input("Enter the item price: "))
+
+try:
+    seller1 = Seller(seller_name, category)
+except KeyError:
+    print(f"Seller '{seller_name}' not found.")
+else:
+    try:
+        seller1.add_item(item_name, item_price)
+    except ValueError as e:
+        print(e)
+    else:
+        output = {
+            seller1.seller_name: {
+                seller1.category: [{"item": item.name, "price": item.price} for item in seller1.get_items()]
+            }
+        }
+        print(output)
+
 
