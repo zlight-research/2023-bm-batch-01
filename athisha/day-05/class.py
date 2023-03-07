@@ -42,7 +42,7 @@ class Seller:
         for category, item_list in seller_data[self.seller_name].items():
             if category == self.category:
                 return [Item(item["item"], item["price"]) for item in item_list]
-# adds a new item to the specified category and seller in the seller_data dictionary.
+# add a new item to the seller_data dictionary for a given seller and category.
     def add_item(self, item_name, item_price):
         item_data = {"item": item_name, "price": item_price}
         for category, item_list in seller_data[self.seller_name].items():
@@ -50,8 +50,9 @@ class Seller:
                 item_list.append(item_data) #appending item_data
                 break
         else:
-            # 
+            # category not found or seller rasie error
             raise ValueError(f"Category '{self.category}' not found for seller '{self.seller_name}'.")
+        
 # returns the seller in each category.
     def to_list_dict(self):
         categories = seller_data[self.seller_name]
@@ -83,7 +84,6 @@ for seller_name in seller_data.keys():
         output[seller_name][category] = [str(item) for item in items]
 # object to the output dictionary. 
 print(output)
-
 
 seller_data = {}
 # it should not be case-sensitive
