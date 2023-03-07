@@ -70,7 +70,7 @@ seller_data = {
         "drinks": [{"item": "pepsi", "price": 45}, {"item": "fanta", "price": 52}, {"item": "latte", "price": 100}]
     }
 }
-# 
+
 seller_name,category,item_name,item_price = input("Enter the seller name: "), input("Enter the category: "), input("Enter the item name: "),  int(input("Enter the item price: "))
 
 seller1 = Seller(seller_name, category)
@@ -91,19 +91,19 @@ print(output)
 seller_data = {}
 
 while True:
-    seller_name = input("Enter the new seller name or type 'quit' to exit: ")
+    seller_name = input("Enter the new seller name or type 'quit': ")
     if seller_name.lower() == "quit":
         break
 
     seller_data[seller_name] = {}
     while True:
-        category = input(f"Enter the new category or type 'done' to finish adding categories: ")
+        category = input(f"Enter the new category or type 'done': ")
         if category.lower() == "done":
             break
 
         seller_data[seller_name][category] = []
         while True:
-            item_name = input(f"Enter the new item name or type 'done' to finish adding items: ")
+            item_name = input(f"Enter the new item name or type 'done': ")
             if item_name.lower() == "done":
                 break
 
@@ -112,10 +112,7 @@ while True:
 
 print(seller_data)
 
-seller_name = input("Enter the seller name: ")
-category = input("Enter the category: ")
-item_name = input("Enter the item name: ")
-item_price = int(input("Enter the item price: "))
+seller_name, category, item_name, item_price = input("Enter the seller name: "), input("Enter the category: "), input("Enter the item name: "), int(input("Enter the item price: "))
 
 try:
     seller1 = Seller(seller_name, category)
