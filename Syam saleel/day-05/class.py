@@ -1,38 +1,3 @@
-"""class Seller:
-    def __init__(self, seller_name,category,items_in_stock):
-        self.seller_name = seller_name
-        self.category=category
-        self.items_in_stock={}
-
-    def add_item(self, category, item):
-        if category not in self.items_in_stock:
-            self.items_in_stock[category]=[]
-        self.items_in_stock[category].append(item)
-
-    def get_cost(self, item_name):
-        for category, items in self.items_in_stock.items():
-            for item in items:
-                if item.item_name.lower() == item_name.lower():
-                    return item.price
-        return None
-
-def has_item(self, item_name):
-        for category, items in self.items_in_stock.items():
-            for item in items:
-                if item.item_name.lower() == item_name.lower():
-                    return True
-        return False
-
-
-class Items:
-    def __init__(self, item_name=None, price=0):
-        self.item_name = item_name
-        self.price = price
-
-    def set_details(self, name, price):
-        self.item_name = name
-        self.price = price
-
 
 seller_data = {
     "best store": {
@@ -45,32 +10,59 @@ seller_data = {
     }
 }
 
-sellers = {}
+class items:
+    def __init__(self,item_name,item_price):
+        self.item_name=item_name
+        self.item_price=item_price
+  
+    def add(self):
+       # seller_name = input("Enter seller name: ")
+       # category = input("Enter category: ")
+       #to add items
+        for keys, values in seller_data.items():
+            if seller_name == keys:
+                for categ, category_data in values.items():
+                    if categ == category:
+                        category_data.append({"item": self.item_name, "price": self.item_price})
+                        print(seller_data)
+    def get_price(item_name):
+        for seller, categories in seller_data.items():
+            for category, items in categories.items():
+                for item in items:
+                    if item["item"] == item_name:
+                        return item
+        return None
+    def check_item(item_name):
+        for seller, categories in seller_data.items():
+            for category, items in categories.items():
+                for item in items:
+                    if item["item"] == item_name:
+                        return item
+        return None
 
-while True:
-    seller_name = input("Enter seller name : ")
-    if not seller_name:
-        break
-    seller = Seller(seller_name)
-    while True:
-        category = input("Enter item category : ")
-        if not category:
-            break
-        while True:
-            item_name = input("Enter item name : ")
-            if not item_name:
-                break
-            item_price = input("Enter item price : ")
-            item_obj = Items()
-            item_obj.set_details(item_name, int(item_price))
-            seller.add_item(category, item_obj)
-    sellers[seller_name] = seller
+class seller(items):
+    def __init__(self, seller_name,category,item_in_stock):
+        self.seller_name=seller_name
+        self.category=category
+        self.item_in_stock=item_in_stock
 
-# Print the items for each seller
-for seller_name, seller in sellers.items():
-    print(f"Seller: {seller_name}")
-    for category, items in seller.items_in_stock.items():
-        print(f"Category: {category}")
-        for item in items:
-            print(f"Item: {item.item_name} | Price: {item.price}")
-"""
+seller_name = input("Enter seller name: ")
+category = input("Enter category: ")
+item_name = input("Enter item name: ")
+item_price = int(input("Enter item price: "))
+items(item_name, item_price).add()
+
+search_item_name = input("Enter item name to search: ")
+item = items.check_item(search_item_name)
+if item:
+    print(f"Item '{item['item']}' found with price {item['price']}.")
+else:
+    print(f"Item '{search_item_name}' not found.")
+# insert into seller class
+#items(item_name="mango",item_price=120).add(seller_name="best store",category="fresh fruits")
+
+#to find the seller item
+
+
+       
+
