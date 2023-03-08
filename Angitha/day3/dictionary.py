@@ -4,9 +4,9 @@ school=[{"id":1, "name":"Yadhu", "age":25},
 {"id":2, "name":"Ajay", "age":16},
 {"id":3, "name":"Syam", "age":22}]
 print("sorting by age:")
-"""firstly we sort only the age in ascendeing order"""
+"""sort"""
 print(sorted(school,key=lambda i:i['age']))
-"""then we sort """
+
 """lambda we use supplying a fn as a key parameter to sorted"""
 
 
@@ -19,7 +19,7 @@ school=[{"id":1, "name":"Yadhu", "age":25},
 {"id":3, "name":"Syam", "age":22}]
 
 school[2]["name"]="shobana"
-"""Rename """
+"""rename """
 
 print(school)
 
@@ -28,7 +28,7 @@ school=[{"id":1, "name":"Yadhu", "age":25},
 {"id":2, "name":"Ajay", "age":16},
 {"id":3, "name":"Syam", "age":22}]
 school[1]["Gender"]="Male"
-"""add Gender :male only for Ajay index[1]"""
+"""add Gender"""
 print(school)
 
 

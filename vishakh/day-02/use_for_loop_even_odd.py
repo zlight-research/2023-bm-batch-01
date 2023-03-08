@@ -34,7 +34,7 @@ print("Even numbers using for loop:",even_numbers1)
 print("Odd numbers using for loop :",odd_numbers1) 
 
 
-
+print("*"*100)
 
 
 #Using while loop to find odd numbers and even numbers in a range

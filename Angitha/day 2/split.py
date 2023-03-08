@@ -9,7 +9,6 @@ input="Angitha Sheeban"
 words=input.split()
 
 print("First_word=",words[0].capitalize())
-"""first alphabet will come capital """
 
 print("Second Word=",words[1].capitalize())    
 

@@ -26,10 +26,10 @@ except Exception as e:
     print("Error reading JSON file:", e)
 
 dict_2["remarks"] = "Modified"
-"""
+
 try:
     f = open("day4.txt", "w")
     json.dump(dict_2, f)
     f.close()
 except Exception as e:
-    print("Error writing JSON file:", e)"""
+    print("Error writing JSON file:", e)

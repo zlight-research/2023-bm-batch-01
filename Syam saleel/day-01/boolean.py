@@ -2,13 +2,11 @@
 
 
 Boolean = input("enter the boolean value:")
+age = Boolean.upper()
 
-
-if Boolean== "FALSE":
+if age == "FALSE":
     print('F')
 
 # elif evaluated to true.
-elif Boolean == "TRUE":
+elif age == "TRUE":
     print('M')
-else:
-    print("it is not a boolean value")

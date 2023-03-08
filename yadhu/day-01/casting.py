@@ -6,4 +6,3 @@ strftime is use to convert dates to strings
 """
 current_date=datetime.datetime.now()
 print(current_date.strftime("Current Date And Time=%Y,%b %d  %H:%M:%S %p"))
-

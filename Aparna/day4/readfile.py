@@ -1,0 +1,6 @@
+c=input("this is day4")
+r=input("4th day")
+f=open("write.txt","r")
+text=f.read()
+text=text.replace(c,r)
+f.close()

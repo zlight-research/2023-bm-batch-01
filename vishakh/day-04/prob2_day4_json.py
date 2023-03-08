@@ -35,12 +35,12 @@ with open(r"F:\\File_handle\\Employee.json",'r') as input:
    data=json.load(input)    
 print(data)
 
-
+print("*"*100)
 
 #add a attribute "remarks":"Modified" 
 data['remarks']='Modified'
 print(data)
-
+print("*"*100)
 
 #write into json file updated dictionary to json
 with open(r"F:\\File_handle\\Employee.json",'w') as output:

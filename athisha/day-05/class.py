@@ -23,44 +23,41 @@ seller_data = {
         "drinks": [{"item": "pepsi", "price": 45}, {"item": "fanta", "price": 52}, {"item": "latte", "price": 100}]
     }
 }"""
+# Item class has two attributes item_name and item_price
+class Item:
+    def __init__(self, item_name, item_price):
+        self.name = item_name
+        self.price = item_price
+    # a string representation of an Item object.
+    def __str__(self):
+        return f"{self.name} ({self.price})"
 
-
-
-# seller_data = {
-#     "best store": {
-#         "fresh fruits": [{"item": "apple", "price": 50}, {"item": "orange", "price": 80}, {"item": "banana", "price": 26}],
-#         "vegetables": [{"item": "carrot", "price": 30}, {"item": "onion", "price": 65}, {"item": "zoya", "price": 15}]
-#     },
-#     "supreme": {
-#         "cakes": [{"item": "black forest", "price": 450}, {"item": "white forest", "price": 520}, {"item": "red velvet", "price": 860}],
-#         "drinks": [{"item": "pepsi", "price": 45}, {"item": "fanta", "price": 52}, {"item": "latte", "price": 100}]
-#     }
-# }
-
-
-# class Items:
-#     def __init__(self, name, price):
-#         self.name = name
-#         self.price = price
+# Seller class has two attributes seller_name and category
+class Seller:
+    def __init__(self, seller_name, category):
+        self.seller_name = seller_name
+        self.category = category
+# get_items method returns a list.
+    def get_items(self):
+        for category, item_list in seller_data[self.seller_name].items():
+            if category == self.category:
+                return [Item(item["item"], item["price"]) for item in item_list]
+# add a new item to the seller_data dictionary for a given seller and category.
+    def add_item(self, item_name, item_price):
+        item_data = {"item": item_name, "price": item_price}
+        for category, item_list in seller_data[self.seller_name].items():
+            if category == self.category:
+                item_list.append(item_data) #appending item_data
+                break
+        else:
+            # category not found or seller rasie error
+            raise ValueError(f"Category '{self.category}' not found for seller '{self.seller_name}'.")
         
-#     def item_details(self):
-#         # self.name = name
-#         # self.price = price
-#         print(self.name)
-
-# class Seller:
-#     def _init_(self,seller_name,category,items_in_stock):
-#         self.seller_name = seller_name
-#         self.category = category
-#         self.items_in_stock = items_in_stock
-
-#     def add_item(self, category, items_in_stock):
-#         if category not in self.items_in_stock:
-#             self.items_in_stock[category] = []
-#             self.items_in_stock[category].append(items_in_stock)
-
-# z = Items('',500).item_details()
-
+# returns the seller in each category.
+    def to_list_dict(self):
+        categories = seller_data[self.seller_name]
+        return {category: [item for item in items] for category, items in categories.items()}
+# seller_data  items sold by different sellers(best store, supreme).
 seller_data = {
     "best store": {
         "fresh fruits": [{"item": "apple", "price": 50}, {"item": "orange", "price": 80}, {"item": "banana", "price": 26}],
@@ -71,67 +68,59 @@ seller_data = {
         "drinks": [{"item": "pepsi", "price": 45}, {"item": "fanta", "price": 52}, {"item": "latte", "price": 100}]
     }
 }
+# the specified seller_name and category
+seller_name,category,item_name,item_price = input("Enter the seller name: "), input("Enter the category: "), input("Enter the item name: "),  int(input("Enter the item price: "))
+# adds the new item to the seller_data
+seller1 = Seller(seller_name, category)
+seller1.add_item(item_name, item_price)
 
+output = {}
+# Item objects, and adding a string representation of each Item
+for seller_name in seller_data.keys():
+    output[seller_name] = {}
+    for category in seller_data[seller_name].keys():
+        seller = Seller(seller_name, category)
+        items = seller.get_items()
+        output[seller_name][category] = [str(item) for item in items]
+# object to the output dictionary. 
+print(output)
 
-class Items:
-    def __init__(self):
-        self.item_name = "Default item"
-        self.price_per_unit = 0
+seller_data = {}
+# it should not be case-sensitive
+while True:
+    seller_name = input("Enter the new seller name or type 'quit': ")
+    if seller_name.lower() == "quit":
+        break
+    seller_data[seller_name] = {}
+    while True:
+        category = input(f"Enter the new category or type 'done': ")
+        if category.lower() == "done":
+            break
+        seller_data[seller_name][category] = []
+        while True:
+            item_name = input(f"Enter the new item name or type 'done': ")
+            if item_name.lower() == "done":
+                break
+            item_price = int(input("Enter the new item price: "))
+            seller_data[seller_name][category].append({"item": item_name, "price": item_price})
+# seller_data result
+print(seller_data)
+# enter your seller_name, category, item_name, item_price
+seller_name, category, item_name, item_price = input("Enter the seller name: "), input("Enter the category: "), input("Enter the item name: "), int(input("Enter the item price: "))
 
-    def set_item_details(self, item_name, price_per_unit):
-        self.item_name = item_name
-        self.price_per_unit = price_per_unit
-
-
-class Seller:
-    def __init__(self, seller_name, category):
-        self.seller_name = seller_name
-        self.category = category
-        self.items_in_stock = []
-
-    def add_item(self, item_name, price_per_unit):
-        new_item = Items()
-        new_item.set_item_details(item_name, price_per_unit)
-        self.items_in_stock.append(new_item)
-
-    def get_item_cost(self, item_name):
-        for item in self.items_in_stock:
-            if item.item_name.lower() == item_name.lower():
-                return item.price_per_unit
-        return "Item not found in stock."
-
-    def is_item_in_stock(self, item_name):
-        for item in self.items_in_stock:
-            if item.item_name.lower() == item_name.lower():
-                return "Item is present in stock."
-        return "Item is not present in stock."
-
-
-seller_objs = {}
-
-for seller_name, seller_data in seller_data.items():
-    seller_objs[seller_name] = Seller(seller_name, "")
-    for category, items in seller_data.items():
-        seller_objs[seller_name].category = category
-        for item in items:
-            item_name = item['item']
-            price_per_unit = item['price']
-            seller_objs[seller_name].add_item(item_name, price_per_unit)
-
-
-#  present in a seller's stock (case-insensitive)
-def is_item_in_stock(seller_name, item_name):
-    if seller_name in seller_objs:
-        return seller_objs[seller_name].is_item_in_stock(item_name)
+try:
+    seller1 = Seller(seller_name, category)
+except KeyError:
+    print(f"Seller '{seller_name}' not found.")
+else:
+    try:
+        seller1.add_item(item_name, item_price)
+    except ValueError as e: # raise a valuError
+        print(e)
     else:
-        return "Seller not found."
-"""
-print(seller_objs['best store'].get_item_cost('apple'))  # Output: 50
-print(is_item_in_stock('best store', 'Carrot'))  # Output: Item is present in stock.
-print(is_item_in_stock('supreme', 'pepsi'))  # Output: Item is present in stock.
-print(is_item_in_stock('supreme', 'ice cream'))  # Output: Item is not present in stock."""
-
-seller_name = input("Enter the name of the seller: ")
-item_name = input("Enter the name of the item: ")
-print(is_item_in_stock(seller_name, item_name))
-
+        output = {
+            seller1.seller_name: {
+                seller1.category: [{"item": item.name, "price": item.price} for item in seller1.get_items()]
+            }
+        }
+        print(output)
