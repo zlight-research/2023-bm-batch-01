@@ -42,7 +42,7 @@ class Seller:
         for category, item_list in seller_data[self.seller_name].items():
             if category == self.category:
                 return [Item(item["item"], item["price"]) for item in item_list]
-# add a new item to the seller_data dictionary for a given seller and category.
+# Add a new item to the seller_data dictionary for a given seller and category.
     def add_item(self, item_name, item_price):
         item_data = {"item": item_name, "price": item_price}
         for category, item_list in seller_data[self.seller_name].items():
@@ -50,10 +50,10 @@ class Seller:
                 item_list.append(item_data) #appending item_data
                 break
         else:
-            # category not found or seller rasie error
+            # Category not found or seller rasie error
             raise ValueError(f"Category '{self.category}' not found for seller '{self.seller_name}'.")
         
-# returns the seller in each category.
+# Returns the seller in each category.
     def to_list_dict(self):
         categories = seller_data[self.seller_name]
         return {category: [item for item in items] for category, items in categories.items()}
@@ -68,9 +68,9 @@ seller_data = {
         "drinks": [{"item": "pepsi", "price": 45}, {"item": "fanta", "price": 52}, {"item": "latte", "price": 100}]
     }
 }
-# the specified seller_name and category
+# The specified seller_name and category
 seller_name,category,item_name,item_price = input("Enter the seller name: "), input("Enter the category: "), input("Enter the item name: "),  int(input("Enter the item price: "))
-# adds the new item to the seller_data
+# Adds the new item to the seller_data
 seller1 = Seller(seller_name, category)
 seller1.add_item(item_name, item_price)
 
@@ -82,30 +82,34 @@ for seller_name in seller_data.keys():
         seller = Seller(seller_name, category)
         items = seller.get_items()
         output[seller_name][category] = [str(item) for item in items]
-# object to the output dictionary. 
+# Object to the output dictionary. 
 print(output)
 
 seller_data = {}
-# it should not be case-sensitive
+# It should not be case-sensitive
 while True:
-    seller_name = input("Enter the new seller name or type 'quit': ")
+    # User to enter the name of a new seller 
+    seller_name = input("Enter the new seller name or 'quit': ")
+    # User enter "quit", the loop break.
     if seller_name.lower() == "quit":
         break
     seller_data[seller_name] = {}
     while True:
-        category = input(f"Enter the new category or type 'done': ")
+        # The user enter "done", the loop break.
+        category = input(f"Enter the new category or 'done': ")
         if category.lower() == "done":
             break
+        # A list that is stored in seller_data
         seller_data[seller_name][category] = []
         while True:
-            item_name = input(f"Enter the new item name or type 'done': ")
+            item_name = input(f"Enter the new item name or  'done': ")
             if item_name.lower() == "done":
                 break
             item_price = int(input("Enter the new item price: "))
             seller_data[seller_name][category].append({"item": item_name, "price": item_price})
 # seller_data result
 print(seller_data)
-# enter your seller_name, category, item_name, item_price
+# Enter your seller_name, category, item_name, item_price
 seller_name, category, item_name, item_price = input("Enter the seller name: "), input("Enter the category: "), input("Enter the item name: "), int(input("Enter the item price: "))
 
 try:
@@ -115,7 +119,7 @@ except KeyError:
 else:
     try:
         seller1.add_item(item_name, item_price)
-    except ValueError as e: # raise a valuError
+    except ValueError as e: # the error message.
         print(e)
     else:
         output = {
