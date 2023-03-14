@@ -70,7 +70,7 @@ seller_data = {
 }
 # The specified seller_name and category
 seller_name,category,item_name,item_price = input("Enter the seller name: "), input("Enter the category: "), input("Enter the item name: "),  int(input("Enter the item price: "))
-# Adds the new item to the seller_data
+# Add the new item to the seller_data
 seller1 = Seller(seller_name, category)
 seller1.add_item(item_name, item_price)
 
