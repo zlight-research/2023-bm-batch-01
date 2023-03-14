@@ -18,7 +18,7 @@ This is done by : Yadhu
 # escape charater is backslash 
 
 
-with open(r"E:\zlight\2023-bm-batch-01\athisha\day-04\file_append_read.txt", 'a') as fp:
+with open(r"D:\zlight\2023-bm-batch-01\athisha\day-04\file_append_read.txt", 'a') as fp:
     fp.write("This is 4th day")
     fp.write("\nThis is done by : Athisha")
     print("hi")
