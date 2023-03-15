@@ -26,7 +26,7 @@ result = []
 for d in data:
     wo_id = list(d)[0]
     result.append({wo_id: {
-        "work_order_date": list(d)[1],
+        "wo_date": list(d)[1],
         "work_order_details": list(d)[2]
     }})
 print(result)
