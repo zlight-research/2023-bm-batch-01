@@ -20,10 +20,9 @@ class Seller:
     # Add a new item to the seller_data dictionary for a given seller and category.    
     def add_item(self, item_name, item_price):
         item_data = {"item": item_name, "price": item_price}
-        for category, item_list in seller_data[self.seller_name].items():
-            if category == self.category:
-                item_list.append(item_data)# appending item_data
-                break
+        item_list = seller_data[self.seller_name].get(self.category)
+        if item_list is not None:
+            item_list.append(item_data) # appending item_data
         else:
             # Category not found or seller rasie error
             raise ValueError(f"Category '{self.category}' not found for seller '{self.seller_name}'.")
