@@ -111,9 +111,6 @@ else:
         print(e)
     else:
         seller_result = {
-            seller1.seller_name: {
-                seller1.category: [{"item": item.name, "price": item.price} for item in seller1.get_items()]
-            }
-        }
+            seller1.seller_name: {seller1.category: [{"item": item.name, "price": item.price} for item in seller1.get_items()]}}
         print(seller_result)
 
